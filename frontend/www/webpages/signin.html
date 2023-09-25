@@ -1,0 +1,123 @@
+<html style="background: white;max-width: 100%" lang="en">
+
+<head>
+
+    <title>Kcurrent</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
+
+    <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet" defer>
+ 
+    <link rel="icon" href="../image/k_icon.png" type="image/png">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js" defer></script>
+    <script src="../js/angular-route.min.js"></script>
+    <script src="../js/angular-aria.min.js" defer></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.js"></script>    <script src="../js/angular-ui-router.js" defer></script>
+    <script src="../js/angular-ui-router.js" defer></script>
+ 
+
+    <script src="../js/index.js"></script>
+    <script src="../js/home.js"></script>
+    <script src="../js/show.js" ></script>
+    <script src="../js/checkout.js" ></script>
+
+
+    <link href="../css/angular-material.css" rel="stylesheet" defer>
+    <link rel="stylesheet" href="https://material.angularjs.org/1.1.5/docs.css" defer>
+    <!-- <link href="../css/menu.css" rel="stylesheet"> -->
+    <!-- <link href="../css/home.css" rel="stylesheet"> -->
+    <link href="../css/user_signin.css" rel="stylesheet">
+    <link href="../css/index.css" rel="stylesheet">
+
+
+    <style>
+        md-grid-tile:hover {
+            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+        }
+    </style>
+    <script defer>
+$(function () {
+        var Accordion = function (el, multiple) {
+            this.el = el || {};
+            this.multiple = multiple || false;
+    
+            // Variables privadas
+            var links = this.el.find('.link');
+            // Evento
+            links.on('click', { el: this.el, multiple: this.multiple }, this.dropdown)
+        }
+    
+        Accordion.prototype.dropdown = function (e) {
+            var $el = e.data.el;
+            $this = $(this),
+                $next = $this.next();
+    
+            $next.slideToggle();
+            $this.parent().toggleClass('open');
+    
+            if (!e.data.multiple) {
+                $el.find('.submenu').not($next).slideUp().parent().removeClass('open');
+            };
+        }
+    
+        var accordion = new Accordion($('#accordion'), false);
+    });
+    </script>
+</head>
+
+<body ng-app="MyApp">
+        <noscript>
+                <META HTTP-EQUIV="Refresh" CONTENT="0;URL=ErrorPage.html">
+              </noscript>
+              <div id="loader" style="overflow: hidden;">
+                <h1 data-text="Loading..." style="font-size: 25px"></h1>
+            </div>
+                <div ng-include="'header.html'"></div>
+               
+                <div ng-controller="loggedin" class="form_div">
+                    <!-- <form action="/action_page.php"> -->
+                    
+                      <div>
+                        <form ng-submit="signin()">
+                        <p class="page_header">Sign In</p>
+                        <!-- <p>Please fill in this form to create an account.</p> -->
+                        <hr>
+                    
+                        <label for="emailid" style="font-weight: 500">Email</label>
+                        <input type="text" id="emailid" placeholder="Email ID" autocomplete="false" required> <!-- ng-blur="validateEmail()" -->
+                        <!-- <img src="../image/information.svg" style="height: 15px;width: 15px;display: inline;position: relative;"> -->
+                    
+                        <p ng-if="email_violation" class="error_message">{{email_message}}</p>
+                        
+                        <label for="password" style="font-weight: 500">Password</label>
+                        <input type="password"  id="password" placeholder="Password"   required><!--ng-blur="validatePass(this)" -->
+                        <p ng-if="password_violation" class="error_message">{{password_message}}</p>
+                    
+                        <p class="p_type_a">Forgot Password? <a href="../webpages/forgotPass.html">Click here</a>.</p>
+                    
+                    <!-- 
+                        <label for="psw-repeat"><b>Repeat Password</b></label>
+                        <input type="password" placeholder="Repeat Password" name="psw-repeat" required> -->
+                        <hr>
+                        <!-- <p>By creating an account you agree to our <a href="#">Terms & Privacy</a>.</p> -->
+                    
+                        <button id="sign_in" type="submit" class="registerbtn">Sign In</button>
+                        </form>
+                      </div>
+                      
+                      <div>
+                        <p class="p_type_b">Don't have an account? <a href="../webpages/signup.html">Sign Up</a>.</p>
+                      </div>
+                    <!-- </form> -->
+                    </div>
+
+                <div  ng-include="'footer.html'"></div>
+
+
+
+</body>
+</html>

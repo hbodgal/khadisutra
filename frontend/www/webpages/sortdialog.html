@@ -1,0 +1,226 @@
+<!-- <html ng-app="questApp"> -->
+
+    <!-- <div ng-cloak ng-controller="DemoCtrl as userdata" class="tabsdemoDynamicHeight" ng-cloak="">
+      <md-content>
+        <md-tabs md-dynamic-height md-border-bottom>
+          <md-tab label="one">
+            <md-content class="md-padding">
+              <h1 class="md-display-2">Login Form</h1>
+              <md-button ng-click=".openDialog($event)" class="md-raised">Open Dialog</md-button> -->
+
+              <!-- <div  layout="column" layout-align="center" >
+                <md-card ng-repeat="i in userdata.array" id="prova">
+                  <md-card-title>
+                    <md-card-title-text layout="row">
+                      <span flex layout ="column"><b>firstname</b>{{i.firstname}}</span>
+                      <span flex layout ="column"><b>lastname</b>{{i.lastname}}</span>
+                      <span flex layout ="column"><b>Username</b>{{i.username}}</span>
+                      <span flex layout ="column"><b>Password</b>{{i.password}}</span>
+                     <span flex layout ="column"><b>CONF_Password</b>{{i.conf_password}}</span>
+
+
+                      <span flex layout ="column"><b>phone no</b>{{i.phone}}</span>
+                      <span flex layout ="column"><b>email id</b>{{i.email}}</span>
+                     
+                       <md-button ng-click="userdata.modifica()">Modifica</md-button>
+                      <md-button ng-click="userdata.rimuovi()">Elimina</md-button> -->
+                    <!-- </md-card-title-text>
+                  </md-card-title>
+                  
+                </md-card>
+              </div>
+
+            </md-content>
+          </md-tab>
+          <md-tab label="two">                              
+            <md-content class="md-padding">
+              <h1 class="md-display-2">Subtotali</h1>
+              
+            </md-content>
+          </md-tab>
+        </md-tabs>
+      </md-content>
+    </div> --> 
+
+    <md-dialog aria-label="filter " ng-cloak style="width:99%">
+      
+            <md-toolbar>
+              <div class="md-toolbar-tools">
+                <h2>FILTER</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="cancel()">
+                  <md-icon md-svg-src="img/icons/ic_close_24px.svg" aria-label="Close dialog"></md-icon>
+                </md-button>
+              </div>
+            </md-toolbar>
+          
+            <md-dialog-content>
+                <!-- <md-tabs md-dynamic-height md-border-bottom md-stretch-tabs="always">
+                    <md-tab label="LOGIN">
+              <div class="md-dialog-content">
+                <form role="form" ng-submit="answer(userdata)">
+                          <div layout-gt-xs="column">
+                     
+                            <md-input-container class="md-block" flex-gt-xs="">
+                              <label>Username</label>
+                              <input ng-model="userdata.username"  size="30" >
+                            </md-input-container>
+                           
+            
+                            <md-input-container class="md-block" flex-gt-xs="">
+                              <label>Password</label>
+                              <input ng-model="userdata.password"  size="30" >
+                            </md-input-container>
+           
+              
+                            
+                          
+                            <md-button  type="submit" class="md-raised md-primary">SIGN IN</md-button>
+                          </div>
+                        </form>
+              </div>
+              </md-tab>
+                  <md-tab label="REGISTER">
+                      <div class="md-dialog-content" style="margin:5%">
+                          <form role="form" ng-submit="answer(userdata)">
+                                    <div layout-gt-xs="column">
+                                      <md-input-container class="md-block" flex-gt-xs="">
+                                        <label>First name</label>
+                                        <input ng-model="userdata.firstname"  size="30">
+                                      </md-input-container><md-input-container class="md-block" flex-gt-xs="">
+                                        <label>Last name</label>
+                                        <input ng-model="userdata.lastname"  size="30" >
+                                      </md-input-container>
+                                      <md-input-container class="md-block" flex-gt-xs="">
+                                        <label>Username</label>
+                                        <input ng-model="userdata.username" size="30" >
+                                      </md-input-container>
+                                     
+                      
+                                      <md-input-container class="md-block" flex-gt-xs="">
+                                        <label>Password</label>
+                                        <input ng-model="userdata.password"  size="30">
+                                      </md-input-container>
+                      <md-input-container class="md-block" flex-gt-xs="">
+                                        <label>Confirm Password</label>
+                                        <input ng-model="userdata.conf_password" size="30">
+                                      </md-input-container>
+                       <md-input-container class="md-block" flex-gt-xs="">
+                                        <label>Phone No.</label>
+                                        <input type="tel" ng-model="userdata.phone"  size="30">
+                                      </md-input-container>
+                       <md-input-container class="md-block" flex-gt-xs="">
+                                        <label>Email</label>
+                                        <input type="email" ng-model="userdata.email"  size="30">
+                                      </md-input-container>
+                        
+                                      
+                                    
+                                      <md-button  type="submit" class="md-raised md-primary">REGISTER</md-button>
+                                    </div>
+                                  </form>
+                        </div>
+                    </md-tab>
+                    </md-tabs> -->
+                    <div id="id3" class="slidebar" style="background:white;">
+
+                            <md-content class="page-container" layout="column" style="background:white;">
+            
+                               
+            
+                                <div layout="column" style="padding:5%;">
+            
+                                    <!-- <div style="padding-top:2%;">
+                                            <md-input-container>
+                                                    <!-- <label>Sorting</label> -->
+                                                    <!-- <md-select ng-model="sorting" ng-change="onChange()"> -->
+                                                    <!-- <md-select ng-model="sorting" onchange="orderby()"> -->
+                                                      <!-- <md-option value="none"><em>None</em></md-option>
+                                                      <md-option ng-repeat="i in sort_options"  value="{{i}}">
+                                                        {{i}}
+                                                      </md-option>
+                                                    </md-select>
+                                                  </md-input-container> -->
+            
+                                        <!-- </div> -->
+                                        <!-- <md-select ng-model="sorting" id="sorting" placeholder="Sort by" style="width:90%;" ng-change="onChange()"> -->
+                                                <!-- <label> High to Low<input type="radio" ng-model="$parent.selectedObj" ng-value="High to Low"> </label> 
+                                                <label> lowtohigh<input type="radio" ng-model="$parent.selectedObj" ng-value="lowtohigh"> </label>  
+                                                <label> Best Seller<input type="radio" ng-model="$parent.selectedObj" ng-value="Best Seller"> </label>  
+                                                <label> Newest First<input type="radio" ng-model="$parent.selectedObj" ng-value="Newest First"> </label>   -->
+                                                <md-radio-group ng-model="data.group1">
+                                                        <md-radio-button value="None">None</md-radio-button>
+
+                                                        <md-radio-button value="High to Low" aria-label="Label 1">High to Low</md-radio-button>
+                                                        <md-radio-button value="lowtohigh"> lowtohigh </md-radio-button>
+                                                        <md-radio-button value="Best Seller" aria-label="Label 3">Best Seller</md-radio-button>
+                                                        <md-radio-button value="Newest First" aria-label="Label 3">Newest First</md-radio-button>
+
+                                                      </md-radio-group>
+                                                      </div>
+                                            <!-- <md-option value="none">None</md-option>
+                                                <md-option value="hightolow">High to Low</md-option>
+                                                <md-option value="lowtohigh">Low to High</md-option>
+                                                <md-option value="bestseller">Best Seller</md-option>
+                                                <md-option value="NewestFirst">Newest First</md-option>
+            
+             -->
+                                        <!-- <label>By Color :</label>
+            
+                                    <div ng-repeat="i in colors track by $index"> -->
+            
+                                        <!-- <md-checkbox class="color" ng-click="colorfilter(i)" ng-style="{'background-color':'{{i}}'}">{{i}}</md-checkbox> -->
+                                        <!-- <md-checkbox class="color" ng-click="toggle(i, selectedcolor)" ng-style="{'background-color':'{{i}}'}"> -->
+                                    <!-- <md-checkbox class="color"  ng-checked="filt{{i}}" ng-click="toggle(i, selectedcolor)" ng-style="{'background-color':'{{i}}'}">
+            
+                                                
+                                            {{i}}</md-checkbox>
+            
+            
+                                    </div>
+                                    <br>
+                                    <label>By Fabric :</label>
+                                    <div ng-repeat="i in fabrics track by $index">
+                                        <md-checkbox  class="color" ng-checked="filt{{i}}" ng-click="toggle(i,selectedfabric)">
+                                            {{i}}</md-checkbox> -->
+                                        <!-- <md-checkbox class="color" ng-click="filter(fabric,i)">{{i}}</md-checkbox> -->
+            
+                                    <!-- </div>
+                                </div>
+                            
+            
+                                
+                                <br>
+                                <label style="padding-left:5%">Discount :</label>
+            
+                                <div layout="column" style="padding-left:5%">
+                                    <a style="text-decoration:none;cursor:pointer" ng-click="filter_two(10,100,'discount')">10% or more</a>
+                                    <a style="text-decoration:none;cursor:pointer" ng-click="filter_two(25,100,'discount')">25% or more</a>
+                                    <a style="text-decoration:none;cursor:pointer" ng-click="filter_two(35,100,'discount')">35% or more</a>
+                                    <a style="text-decoration:none;cursor:pointer" ng-click="filter_two(50,100,'discount')">50% or more</a>
+                                </div>
+                                <br>
+                                
+                                <label style="padding-left:5%">By Price :</label>
+            
+                                <div layout="column" style="padding-left:5%">
+                                    <a style="text-decoration:none;cursor:pointer" ng-click="filter_two(0,1000,'price')">Under &#x20b9; 1000</a>
+                                    <a style="text-decoration:none;cursor:pointer" ng-click="filter_two(1000,2000,'price')">&#x20b9; 1000 - &#x20b9; 2000</a>
+                                    <a style="text-decoration:none;cursor:pointer" ng-click="filter_two(2000,3500,'price')">&#x20b9; 2000 - &#x20b9; 3500</a>
+                                    <a style="text-decoration:none;cursor:pointer" ng-click="filter_two(3500,4500,'price')">&#x20b9; 3500 - &#x20b9; 4500</a>
+                                    <a style="text-decoration:none;cursor:pointer" ng-click="filter_two(4500,1000000,'price')">&#x20b9; 4500 - &#x20b9; 1000000</a>
+            
+                                </div> -->
+            
+                                <!-- <div flex="100">
+                                    <h2 class="md-title">Selected Items</h2>
+                                    <code style="display: block; padding: 8px;">{{selectedcolor}}</code>
+                                </div> -->
+                                
+                           </md-content>
+                        </div>
+            </md-dialog-content>
+          </md-dialog>
+          
+            <!-- </body>
+          </html> -->

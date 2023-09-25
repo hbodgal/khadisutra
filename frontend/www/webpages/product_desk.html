@@ -1,0 +1,645 @@
+    <!-- mobile view -->
+    <!-- mobile view -->
+    <!-- mobile view -->
+    <!-- mobile view -->
+    <!-- mobile view -->
+    <!-- mobile view -->
+    <!-- mobile view -->
+
+    <div class="mobile">
+      <div id="mobileswiper" class="swiper-container"
+        style="max-width: 100%;width:auto;height:auto;max-height:70%;margin-bottom: 20px;padding:20px 45px 0 45px;">
+        <div class="swiper-wrapper">
+          <img ng-repeat="i in photos" id="{{i}}" style="outline:none;position:inherit;width:unset;"
+            class="swiper-slide" ng-src="{{imagepath}}/{{i}}" />
+          <!--ng-click="viewLarger(this)" -->
+        </div>
+        <!-- Add Arrows -->
+        <!-- <div class="swiper-pagination"></div> -->
+
+        <div class="swiper-button-next" style="outline: none;background-image: url(../image/next.svg)"></div>
+        <div class="swiper-button-prev" style="outline: none;background-image: url(../image/back.svg)"></div>
+      </div>
+
+
+      <!-- <div id="myModal" class="modal">
+
+        <div class="modal-content">
+        
+          <div class="swiper-container" style="max-width: 100%;width:100%;height:100%;">
+            <div class="swiper-wrapper">
+              <img style="width:100%;height:auto;position:inherit;border:1px solid black" class="swiper-slide"
+                ng-src="{{viewLargerPath}}" />
+            </div>
+          </div>
+        </div>
+
+      </div> -->
+
+
+
+
+
+
+      <div ng-if="data_length_flag">
+        <table
+          style="margin:auto;width:100%;text-align:center;color: #222;text-transform:uppercase;font-size: 1.5rem;letter-spacing: 1.2px;font-weight: 500;font-family: 'Merriweather', serif;">
+          <tr>
+            <td style="display:inline;font-size: 2rem">
+
+              {{i.p_name}}
+
+            </td>
+          </tr>
+          <tr>
+            <td style="color: #666;font-size: 1.3rem">
+
+              {{i.p_description}}
+
+            </td>
+          </tr>
+          <tr>
+            <td style="padding-top:15px;padding-bottom: 15px">
+              <!-- <h3 style="text-decoration:line-through;display:inline">
+                                          &#x20B9; {{i.p_price}}
+                                        </h3> -->
+              <h3 style="display:inline;font-family:Merriweather;color: #666;font-weight: 300">&#x20B9;
+                {{i.p_final_price}}</h3>
+              <!-- &#x20B9; (code for indian currency symbol) -->
+            </td>
+          </tr>
+          <tr>
+            <td style="float: right">
+              <a style="font-size: 11px;float: right;padding-right:20px">
+                <md-icon style="color: #081e33;padding: 5px" class="md-default-theme"
+                  md-svg-src="../image/heart-outline.svg"></md-icon>
+                Wishlist
+              </a>
+
+            </td>
+          </tr>
+
+
+          <tr>
+            <td>
+              <script>
+                $(function () {
+                  var Accordion = function (el, multiple) {
+                    this.el = el || {};
+                    this.multiple = multiple || false;
+
+                    // Variables privadas
+                    var links = this.el.find('.link');
+                    // Evento
+                    links.on('click', { el: this.el, multiple: this.multiple }, this.dropdown)
+                  }
+
+                  Accordion.prototype.dropdown = function (e) {
+                    var $el = e.data.el;
+                    $this = $(this),
+                      $next = $this.next();
+
+                    $next.slideToggle();
+                    $this.parent().toggleClass('open');
+
+                    if (!e.data.multiple) {
+                      $el.find('.submenu').not($next).slideUp().parent().removeClass('open');
+                    };
+                  }
+
+                  var accordion = new Accordion($('#accordion_two'), false);
+                });
+              </script>
+
+
+
+
+              <ul id="accordion_two" class="accordion" style="border-bottom:1px solid #CCC;margin-top: unset">
+                <li style="margin:unset">
+                  <div class="link">Details</div>
+                  <ul class="submenu" style="text-align: left;line-height:2rem">
+                    <li style="text-transform:capitalize">
+                      Fabric : {{i.p_fabric}}</li>
+                    <li style="text-transform: capitalize">
+                      Color : {{i.p_color}}</li>
+
+                    <li style="text-transform: capitalize" ng-repeat="j in i.p_description_points">{{j}}</li>
+
+
+
+                  </ul>
+                </li>
+
+
+
+
+              </ul>
+
+
+            </td>
+          </tr>
+
+
+        </table>
+      </div>
+
+      <ul style="border:black 1px solid;padding: 5px;width: 90%;margin: auto;font-size:12px;max-width: 350px ">
+        <li>How To Order :</li>
+        <li>Step 1 : Choose Standard Size OR Custom Size</li>
+        <li> Step 2 : Give Your Height</li>
+        <li> Step 3 : Customize your apparel</li>
+        <!-- <li> </li> -->
+
+      </ul>
+
+      <md-button id="select_size_button"  type="button" ng-if="data_received" ng-click="call_size_div()"
+      style="background:#CCC;color:#222;width:160px;font-family:Merriwether;display:block;margin:5%;">
+      Select Size
+    </md-button>
+
+      <!-- mobile view -->
+      <!-- mobile view -->
+      <!-- mobile view -->
+      <!-- mobile view -->
+      <!-- mobile view -->
+      <!-- mobile view -->
+      <!-- mobile view -->
+      <!-- mobile view -->
+    </div>
+
+
+
+
+
+
+    <div class="desktop">
+      <div layout="row" style="margin-bottom:10;max-width:80%;margin: auto">
+        <div layout-align: "center center" style="align-content:center;width:20%;height:60%;" ng-if="data_length_flag">
+
+          <div style="max-height:500px;width:fit-content;overflow: scroll;padding:5px">
+            <div layout="column">
+              <img id="{{i}}" ng-repeat="i in photos" alt="image" class="highlight" ng-class="{'activeimg': $first}"
+                ng-src="{{imagepath}}/{{i}}" ng-click="display(i)"
+                style="display:inline-block;position:inherit;height:auto;width:100px;outline:none;margin-bottom:10px" />
+            </div>
+          </div>
+        </div>
+
+        <table class="img-zoom-container" style="width:20%" ng-cloak>
+          <tr>
+            <td>
+              <div>
+
+                <img id="myimage" ng-src="{{imagepath}}/{{displayimg}}" ng-mouseover="display(displayimg)"
+                  style="height:550px;width:350px;display:inline-block;position:inherit;" />
+              </div>
+            </td>
+            <td>
+              <div id="myresult"></div>
+            </td>
+          </tr>
+        </table>
+
+
+
+
+        <div style="width:50%" ng-if="data_length_flag">
+          <table
+            style="max-width:600px;padding-left:20%;margin:auto;width:100%;color: #222;text-transform:uppercase;font-size: 1.5rem;letter-spacing: 1.2px;font-weight: 500;font-family: 'Merriweather', serif;">
+            <tr>
+              <td style="display:inline;font-size: 2rem">
+
+                {{i.p_name}}
+
+              </td>
+
+            </tr>
+            <tr>
+              <td style="color: #666;font-size: 1.3rem">
+
+                {{i.p_description}}
+
+              </td>
+            </tr>
+            <tr>
+              <td style="padding-top:15px;padding-bottom: 15px">
+                <!-- <h3 style="text-decoration:line-through;display:inline">
+                                    &#x20B9; {{i.p_price}}
+                                  </h3> -->
+                <h4 ng-click="openproduct(i.p_id)"
+                  style="outline:none;display:inline;text-decoration: line-through;color:#f15e5e;font-weight: 100"
+                  ng-if="i.p_discount_available">&#x20b9; {{i.p_price}}</h4>
+                <h3 ng-click="openproduct(i.p_id)" style="outline:none;display: inline;" id="{{i.p_id}}">&#x20b9;
+                  {{i.p_final_price}}</h3>
+
+                <!-- &#x20B9; (code for indian currency symbol) -->
+              </td>
+
+            </tr>
+            <tr>
+              <td style="float: left">
+
+                <div class="like-wrapper">
+                  <a class="like-button">
+                    <!-- <span class="like-icon">
+                      <div class="heart-animation-1"></div>
+                      <div class="heart-animation-2"></div>
+                    </span> -->
+                        <md-icon style="color: #081e33;padding: 5px" class="md-default-theme"
+                          md-svg-src="../image/heart-outline.svg"></md-icon> 
+                    Like
+                  </a>
+                </div>
+
+                <script>
+                  $('a.like-button').on('click', function () {
+                    $(this).toggleClass('liked');
+                  }); 
+                </script>
+
+              </td>
+            </tr>
+    
+
+
+            <tr>
+              <td>
+                <ul id="accordion" class="accordion" style="width:100%;border-bottom:1px solid #CCC;margin-top: unset">
+                  <li style="margin:unset">
+                    <div class="link">Details</div>
+                    <ul class="submenu" style="display:block;padding-left:unset;text-align: left;line-height:2rem">
+                      <li style="text-transform:capitalize">
+                        Fabric : {{i.p_fabric}}</li>
+                      <li style="text-transform: capitalize">
+                        Color : {{i.p_color}}</li>
+
+                      <li style="text-transform: capitalize" ng-repeat="j in i.p_description_points">{{j}}</li>
+
+                    </ul>
+                  </li>
+
+                  <!-- <li style="margin:unset">
+                                <div class="link">Delivery and Returns</div>
+                                <ul class="submenu" style="text-align: left;line-height:2rem">
+                                    
+                    
+                                          <li style="text-transform: capitalize">14-17 days from order</li>
+                                       
+                    
+                                          
+                                </ul>
+                              </li><li style="margin:unset">
+                                  <div class="link">Description</div>
+                                  <ul class="submenu" style="text-align: left;line-height:2rem">
+                                      <li style="text-transform:capitalize">
+                                          Fabric : {{i.p_fabric}}</li>
+                                        <li style="text-transform: capitalize">
+                                            Color : {{i.p_color}}</li>
+                      
+                                            <li style="text-transform: capitalize" ng-repeat="j in i.p_description_points">{{j}}</li>
+                                         
+                      
+                                            
+                                  </ul>
+                                </li><li style="margin:unset">
+                                    <div class="link">Description</div>
+                                    <ul class="submenu" style="text-align: left;line-height:2rem">
+                                        <li style="text-transform:capitalize">
+                                            Fabric : {{i.p_fabric}}</li>
+                                          <li style="text-transform: capitalize">
+                                              Color : {{i.p_color}}</li>
+                        
+                                              <li style="text-transform: capitalize" ng-repeat="j in i.p_description_points">{{j}}</li>
+                                           
+                        
+                                              
+                                    </ul>
+                                  </li> -->
+
+
+
+                </ul>
+                <ul
+                  style="border:black 1px solid;padding: 5px;width: 90%;margin: auto;font-size:12px;max-width: 500px ">
+                  <li>How To Order :</li>
+                  <li>Step 1 : Choose Standard Size or Custom Size</li>
+                  <li> Step 2 : Give Your Height</li>
+                  <li> Step 3 : Customize your apparel</li>
+                  <!-- <li> It is so easy!</li> -->
+
+                </ul>
+                <md-button id="select_size_button"  type="button" ng-if="data_received" ng-click="call_size_div()"
+                  style="background:#CCC;color:#222;width:160px;font-family:Merriwether;display:block;margin:5%;">
+                  Select Size
+                </md-button>
+                <!-- <md-button id="myBtn">button</md-button> -->
+              </td>
+            </tr>
+
+
+          </table>
+        </div>
+      </div>
+</div>
+        
+
+<div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <!-- <span class="close">&times;</span> -->
+      <div style="background-color:rgba(0,0,0,0.1);">
+      
+          <form name="myForm" enctype="multipart/form-data" ng-submit="ShowAnswers()" style="margin:unset">
+
+  <div id="size_div" style="max-width:1000px;margin:auto;padding-bottom:50px;overflow-x: hidden" ng-if="data_received && show_size_div">
+
+      <div style="text-align: center;margin: auto;padding-top:20px ">
+        <img src="../image/number_one.svg" style="align-content: center;margin: auto;height: 30px;width: 30px">
+      </div>
+      <p style="margin: 10px;font-weight: bold;font-size: 20px;text-align: center">What's Your Size ?</p>
+      <p ng-if="size_not_selected"
+        style="margin: 20px;font-weight: bold;font-size: 12px;text-align: center;color: red">Please Select Size.</p>
+        <p ng-if="size_partially_selected"
+        style="margin: 20px;font-weight: bold;font-size: 12px;text-align: center;color: red">Please Select Size For All The Body Measurements.</p>
+
+
+
+      <div ng-cloak style="width: 90%;margin-top:50px;text-align: center;margin: 20px auto">
+        <div layout="row">
+          <div style="width: 50%">
+            <p style="margin: 20px;font-weight: bold;font-size: 15px;text-align: center;color: #666">Select size
+              from our
+              predefined sizes for the best fitting.</p>
+            <!-- <div style="padding-top:25px">
+              <table id="size_chart" border="1" align="center"
+                style="overflow: hidden;width: inherit;font-size: 10px;text-align: center;border:1px solid black;border-collapse: collapse;width:70%">
+                <tr align="center" class="table_header">
+                  <td>No</td>
+                  <td>Label</td>
+
+                  <td ng-repeat="i in predef_measurement">{{i}}</td>
+                  <td>Select size</td>
+
+                </tr>
+                <tr ng-repeat="k in predef_sizes" align="center" class="table_rows">
+                  <td style="font-weight: bold">{{k.pre_size_label}}</td>
+                  <td style="font-weight: bold">{{k.pre_size_name}}</td>
+
+                  <td ng-repeat="j in array[$index]">{{j}}</td>
+                  <td align="center" style="padding: 5px">
+                    <input type="radio" name="same" value="{{k.pre_size_id}}" id="{{k.pre_size_id}}"
+                      ng-model="Answers['presize']" ng-click="setDefault(0)" style="outline: none;float: none" />
+
+                  </td>
+                </tr>
+
+              </table>
+            </div> -->
+
+            <div style="position: relative">
+               
+                  <table style="border-spacing: 10px;margin:auto">
+                  <tr align="center">
+                    <td class="size_icon" ng-repeat="k in predef_sizes" align="center" value="{{k.pre_size_id}}" id="{{k.pre_size_id}}" ng-model="Answers['presize']" ng-click="predef_selected(k.pre_size_id)">
+                      {{k.pre_size_name}}
+                        <div class="size_tooltip">
+                          <table id="size_chart" border="1" align="center" style="border-collapse: collapse;">
+                            <tr class="table_rows">
+                            <td ng-repeat="i in predef_measurement">{{i}}</td></tr>
+                          <tr class="table_rows"> 
+                             <td ng-repeat="j in array[$index]">{{j}}</td>
+                            </tr>
+                            </table>
+                          </div>
+                    </td>
+                  </tr>
+                    </table>
+                    
+              </div>
+
+          </div>
+
+          <p style="margin: 20px;font-weight: bold;font-size: 20px;text-align: center;">OR</p>
+          <div style="width: 50%">
+            <p id="empty_feilds_alert"
+              style="margin: 20px;font-weight: bold;font-size: 15px;text-align: center;color: #666">Select your body
+              measurements for the perfect fitting.</p>
+            
+
+            <!-- <div  style="display:block;padding:10px;max-width:100px"> -->
+                <table style="margin:auto;font-size:14px">
+                    <tr ng-repeat="i in size | limitTo:Math.ceil((size.length)/2)">
+                      <td align="left" style="width:25%">
+                          <h5 style="display:inline;">{{size[$index*2].size_name}}</h5>
+                        </td>
+                        <td align="center" style="width:20%">
+                          <md-select id="m{{size[$index*2].size_id}}"
+                            style="text-align: left;outline: none;border:1px solid gray;border-radius: 0;font-size: 12px"
+                            ng-model="Answers[size[$index*2].size_id]" ng-change="custom_size_selected()" ng-if="data_received">
+                            <md-option value="select" selected>select</md-option>
+                            <md-option ng-repeat="option in size[$index*2].size_values" value="{{option}}">{{option}}</md-option>
+                          </md-select>
+    
+                        </td>
+                        <td align="center">        
+                            <img src="../image/information.svg" style="height: 15px;width: 15px">
+                            <!--onclick="showinfo(imagearray[i])" -->
+                        </td>
+                        <td align="left" style="width:25%;padding-left:5%">
+                            <span ng-if="$index*2+1 < size.length">
+      
+                              <h5 style="display:inline;">{{size[$index*2+1].size_name}}</h5>
+                            </span>
+                          </td>
+                          <td align="center" style="width:20%">
+                            <span ng-if="$index*2+1 < size.length">
+      
+                              <md-select id="m{{size[$index*2+1].size_id}}"
+                                style="text-align: left;outline: none;border:1px solid gray;border-radius: 0;font-size: 12px"
+                                ng-model="Answers[size[$index*2+1].size_id]" ng-change="custom_size_selected()" ng-if="data_received">
+                                <md-option value="select" selected>select</md-option>
+                                <md-option ng-repeat="option in size[$index*2+1].size_values" value="{{option}}">{{option}}</md-option>
+                              </md-select>
+                            </span>
+                          </td>
+                          <td align="center">
+                            <span ng-if="$index*2+1 < size.length">
+      
+                              <img src="../image/information.svg" style="height: 15px;width: 15px">
+                            </span>
+                          </td>
+                    </tr>
+                    
+                </table>
+          </div>
+        </div>
+        <!-- </div> -->
+        
+
+
+
+        <div style="margin: auto;text-align: center;padding-top:20px">
+          
+            <md-button id="show_height_div_button" type="button" ng-click="call_height_div()"
+            style="background:#CCC;color:#222;width:160px;font-family:Merriwether;display:block;padding:5px;margin:10px auto">
+            Select Size
+          </md-button>
+
+        </div>
+
+  </div>
+  </div>
+
+
+  <div id="height_div" style="max-width:90%;margin:auto;overflow-x: hidden;display:none;" ng-if="data_received && show_size_div">
+      <div style="text-align: center;margin: auto;padding-top:30px">
+          <img src="../image/number_two.svg" style="align-content: center;margin: auto;height: 30px;width: 30px">
+        </div>
+        <p style="margin: 20px;font-weight: bold;font-size: 20px;text-align: center">Select Your Height</p>
+        <p ng-if="height_not_selected"
+          style="margin: 20px;font-weight: bold;font-size: 12px;text-align: center;color: red">Please Select Your
+          Height.</p>
+
+        <table align="center">
+          <tr>
+            <td align="left" style="width:40%">
+              <h5 style="display:inline;padding:30px 0 30px 0;font-weight: bold">Height</h5>
+            </td>
+            <td align="right">
+              <md-select
+                style="text-align: left;outline: none;border:1px solid gray;border-radius: 0;font-size: 12px"
+                ng-model="Answers['height']">
+                <md-option value="select" selected>select</md-option>
+                <md-option value="4.6">4'6"</md-option>
+                <md-option value="4.7">4'7"</md-option>
+                <md-option value="4.8">4'8"</md-option>
+                <md-option value="4.9">4'9"</md-option>
+                <md-option value="4.10">4'10"</md-option>
+                <md-option value="4.11">4'11"</md-option>
+                <md-option value="5.0">5'0"</md-option>
+                <md-option value="5.1">5'1"</md-option>
+                <md-option value="5.2">5'2"</md-option>
+                <md-option value="5.3">5'3"</md-option>
+                <md-option value="5.4">5'4"</md-option>
+                <md-option value="5.5">5'5"</md-option>
+                <md-option value="5.6">5'6"</md-option>
+                <md-option value="5.7">5'7"</md-option>
+                <md-option value="5.8">5'8"</md-option>
+                <md-option value="5.9">5'9"</md-option>
+                <md-option value="5.10">5'10"</md-option>
+                <md-option value="5.11">5'11"</md-option>
+                <md-option value="6.0">6'0"</md-option>
+                <md-option value="6.1">6'1"</md-option>
+                <md-option value="6.2">6'2"</md-option>
+                <md-option value="6.3">6'3"</md-option>
+                <md-option value="6.4">6'4"</md-option>
+                <md-option value="6.5">6'5"</md-option>
+                <md-option value="6.6">6'6"</md-option>
+                <md-option value="6.7">6'7"</md-option>
+                <md-option value="6.8">6'8"</md-option>
+                <md-option value="6.9">6'9"</md-option>
+                <md-option value="6.10">6'10"</md-option>
+                <md-option value="6.11">6'11"</md-option>
+
+                <!-- <md-option ng-repeat="option in i.size_values" value="{{option}}">{{option}}</md-option> -->
+              </md-select>
+            </td>
+            <td align="right">
+              <img src="../image/information.svg" style="height: 15px;width: 15px">
+
+            </td>
+          </tr>
+
+        </table>
+        <div id="cust_buttons" style="margin: 20px auto;text-align: center;padding: 20px;">
+
+            <!-- <md-button type="button"
+                style="background:#CCC;color:#222;font-family:Merriwether;display:inline;padding: 5px 10px;margin: 10px;width: 250px;">
+                Don't Want to Customize</md-button> -->
+            <md-button id="show_custom_div_button" type="button"  ng-click="call_customization_div()"
+                      style="background:#CCC;color:#222;font-family:Merriwether;display:inline;padding: 5px 10px;margin: 10px;width: 250px;">
+                      Customize Apparel
+                    </md-button>
+                    <input type="checkbox" id="not_customize_checkbox"  ng-click="call_buttons_div()">Don't Want to Customize.</md-checkbox>
+    
+      
+                  </div>
+  </div>
+
+       <div id="customization_div" style="display: none">       
+ <div style="text-align: center;margin: auto;padding-top:30px ">
+            <img src="../image/number_three.svg" style="align-content: center;margin: auto;height: 30px;width: 30px">
+          </div>
+          <p style="margin: 20px;font-weight: bold;font-size: 20px;text-align: center">Customize</p>
+          <div ng-repeat="i in styles" style="text-align:center">
+            <h4 style="padding:10px">Select {{i.style}}</h4>
+            <!-- <li ng-repeat="j in i.style_values" ng-class="{'tilesactive': j == i.style_values[0]}" id="{{j.style_id}}" class="tiles" onclick="tileSelected(j.style_id)" style="display: inline-block;"> -->
+            <!-- <img ng-src="../image/{{j.photo}}" style="width:70px;height:auto;">
+                          <p style="font-size: 10px;text-align: center;">{{j.name}}</p> -->
+            <div class="container" ng-repeat="j in i.style_values">
+              <div class="radio-tile-group">
+
+                <div class="input-container">
+                  <!-- <input type="radio" name="same" value="{{k.pre_size_id}}"  id="{{k.pre_size_id}}" ng-model="Answers['presize']" ng-click="setDefault(0)" style="outline: none;float: none" /> -->
+
+                  <input type="radio" class="radio-button" alt="{{j.photo}}" name="{{i.style}}" value="{{j.name}}"
+                    id="{{j.name}}" ng-model="Answers[i.style]" ng-init="Answers[i.style]=i.style_values[0].name"
+                    ng-click="changed(i.style)" />
+                  <img class="radio-tile" ng-src="../image/{{j.photo}}" style="width:50px;height:auto;">
+
+                  <!-- <div class="icon walk-icon"> -->
+                  <!-- <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M0 0h24v24H0z" fill="none"/>
+                                        <path d="M13.5 5.5c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zM9.8 8.9L7 23h2.1l1.8-8 2.1 2v6h2v-7.5l-2.1-2 .6-3C14.8 12 16.8 13 19 13v-2c-1.9 0-3.5-1-4.3-2.4l-1-1.6c-.4-.6-1-1-1.7-1-.3 0-.5.1-.8.1L6 8.3V13h2V9.6l1.8-.7"/>
+                                      </svg> -->
+                  <!-- </div> -->
+                  <p for="{{j.name}}" style="font-size:0.65rem;color:black;text-align: center">{{j.name}}</p>
+
+
+                </div>
+              </div>
+            </div>
+            <!-- </li> -->
+          </div>
+       </div>
+
+       <div id="buttons_div" style="display: none;margin: auto;text-align: center;padding:40px">
+
+          <div id="buttons">
+            <md-button type="submit"
+              style="background:#CCC;color:#222;width:160px;font-family:Merriwether;display:inline-block;margin:auto">
+              Add
+              To Cart</md-button>
+              <md-button type="submit"
+              style="background:#CCC;color:#222;width:160px;font-family:Merriwether;display:inline-block;margin:auto">
+              Order Now</md-button>
+            <!-- <a ng-click="ShowAnswers()">Submit</a> -->
+
+          </div>
+        </div>
+        </form>
+
+      </div>
+<!-- 
+                        <div id="buttons_div" style="display: none">
+                          <p>yes</p>
+
+                        </div>  -->
+
+                      </div>
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+

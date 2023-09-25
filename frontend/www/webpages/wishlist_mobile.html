@@ -1,0 +1,51 @@
+
+    <div ng-cloak="" class="tabsdemoDynamicHeight "  style="margin:Auto;text-align:center">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center ">
+          
+                            <table style="width: 100%;padding: 5px;font-size: 12px;background: white">
+                                    <tr>
+                                        <th colspan="3" style="text-align: center;padding:15px;">YOUR WISHLIST</th>
+                                    </tr>
+
+                                </table>
+                                <div ng-if="cart_empty" style="margin:auto;align-content:center;text-align:center;padding-top:100px">
+                                        <img src="../image/empty-bag.png" style="width:100px;height:100px;">
+                                        <p>Its Empty!! You have not saved any product to view or buy later. </p>
+                                        </div>
+                                <md-content flex layout-padding style="background:white;">
+
+                                    <md-grid-list flex md-cols-gt-md="4" md-cols-md="3" md-cols-sm="2" md-gutter="1%"
+                                        md-cols-xs="2" md-row-height="1:1.9">
+                                        <md-grid-tile ng-repeat="i in wishlist_data" layout="column">
+                                            <md-card flex="100" style="padding:6px;">
+                                                <div class="image-area" style="align-self: center">
+                                                    <img id="{{i.p_id}}" style="display:inline-block;outline:none;height:auto;width:100%;align-self: center"
+                                                        ng-click="openproduct(i.p_id)" ng-src="{{imgpath}}/{{i.p_display_photo}}" />
+                                                    <a class="remove-image" href="#" style="display: inline;cursor: pointer;" ng-click="splice_wishlist_product($index,i.p_id)" >&#215;</a>
+                                                </div>
+
+                                                <md-card-content style="text-align:center;background:white;color:black;padding:0pt;height: fit-content">
+
+                                                    <h4 class="pr_name" ng-click="openproduct(i.p_id)" style="outline:none;min-height: 15px;max-height: 15px;font-size:1.1rem;"
+                                                        layout-align="start start" id="{{i.p_id}}">{{i.p_name}}</h4>
+                                                    <h3 ng-click="openproduct(i.p_id)" style="outline:none;display:inline;text-decoration: line-through;font-size:1.1rem;"
+                                                        ng-if="i.p_discount_available">&#x20b9; {{i.p_price}}</h3>
+                                                    <h4 ng-click="openproduct(i.p_id)" style="outline:none;display: inline;font-size:1.1rem;"
+                                                        id="{{i.p_id}}">&#x20b9; {{i.p_final_price}}</h4><br>
+                                                    <md-button class="btn-primary" ng-click="addItem(item)" style="display:unset;border:1px solid #ccc;font-size: 8px;">Select Size</md-button>
+                                                    <!--    <img ng-click="addItem(item)" style="height:15px;width:15px;float:right;text-decoration: none;margin: 5px" src="../image/trash.svg" /> -->
+                                                </md-card-content>
+
+                                            </md-card>
+                                        </md-grid-tile>
+                                    </md-grid-list>
+                                </md-content>
+
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>

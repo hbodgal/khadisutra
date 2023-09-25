@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <title>Kcurrent</title>
+        <meta  name='viewport'  content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
+       
+        <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+        <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet">
+
+        <link rel="icon" href="../image/k_icon.png" type="image/png">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+        <script src="../js/angular-route.min.js"></script>
+        <script src="../js/angular-aria.min.js"></script>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.js"></script>    <script src="../js/angular-ui-router.js" defer></script>
+        <script src="../js/angular-dropdowns.js"></script>
+        <script src="../js/angular-ui-router.js"></script>
+
+        <script src="../js/index.js"></script>
+        <script src="../js/checkout.js"></script>
+        <script src="../js/home.js"></script>
+        <script src="../js/show.js" ></script>
+
+        <link href="../css/modal.css" rel="stylesheet">
+        <link href="../css/loader.css" rel="stylesheet">
+
+
+        <link rel="stylesheet" href="https://material.angularjs.org/1.1.5/docs.css">
+        <link href="../css/index.css" rel="stylesheet">
+        <link href="../css/angular-dropdowns.css" rel="stylesheet">
+        <link href="../css/angular-material.css" rel="stylesheet">
+
+      
+
+      
+      
+        <!-- <link rel="stylesheet" href="https://rawgit.com/angular/bower-material/master/angular-material.css"> -->
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.6/angular.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.6/angular-animate.js"></script>
+        <script src="https://rawgit.com/angular/bower-material/master/angular-material.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.6/angular-aria.js"></script> -->
+      
+<!--       
+      
+        <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+        <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script> -->
+    
+
+ 
+      
+
+
+    <script>
+        $(document).ready(function(){
+    $('#loader').css('display','none');
+});
+    </script>
+    
+
+</head>
+<body ng-app="MyApp" style="background:white;font-family: 'Merriweather', serif">
+    <div ng-include="'../webpages/header.html'"></div>
+   
+    <!-- <div id="loader" style="overflow: hidden;">
+        <h1 data-text="Loading..." style="font-size: 25px"></h1>
+</div> -->
+<div id="loader" style="overflow: hidden;">
+    <h1 data-text="Loading..." style="font-size: 25px"></h1>
+</div>
+<div ng-controller="loggedin" style="max-width:600px;margin:auto;width:90%;min-height:500px">
+<!-- <form action="/action_page.php"> -->
+
+  <div ng-if="!emailsent" class="localcontainer" >
+    <p style="text-align: center;font-size: 16px;font: weight 400;margin:unset">Reset Password</p>
+    <!-- <p>Please fill in this form to create an account.</p> -->
+
+    <hr>
+
+    <label for="email" style="font-weight: 500">Email</label>
+    <input type="text" id="emailid" placeholder="Enter Email Address"  required>
+    <p ng-if="email_violation" style="margin: unset;font-size: 1.2rem;cursor: pointer;outline: none;color: red">Please enter email id in proper format.</p>
+
+    <p style="margin: unset;font-size: 1rem;cursor: pointer;outline: none">Please provide your email address and we will send you a password reset link within the next few minutes.</p>
+
+
+    <hr>
+
+    <button type="submit" ng-click="resetpass()" class="registerbtn">Submit</button>
+  </div>
+
+  
+    <div id="emailsent" class="modal">
+      
+            <!-- Modal content -->
+            <div class="modal-content" >
+                            <!-- <span class="close">&times;</span> -->
+                <div style="top:30%;position:relative">
+                        <svg style="position:inherit" class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"><circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/><path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/></svg>
+
+                    <h6 style="text-align:center">An email containing link to reset password has been sent to your Email Id.</h6>
+                    <h4 style="text-align:center"> Reset your password and continue shopping !!</h4>
+
+                        </div>
+
+
+            </div>
+          
+          </div>
+  
+  <!-- <div class="container signin" style="bottom: 0;">
+    <p style="margin-bottom: 0.8em">Don't have an account? <a href="../webpages/signup.html">Sign Up</a>.</p>
+  </div> -->
+<!-- </form> -->
+</div>
+
+<div>
+        <div ng-include="'footer.html'"></div>
+    </div>
+</body>
+</html>

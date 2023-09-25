@@ -1,0 +1,95 @@
+<html style="background: white;max-width: 100%" lang="en">
+
+<head>
+    <title>Kcurrent</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <!-- <script src="http://code.jquery.com/jquery-1.9.1.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet" defer>
+
+    <link rel="icon" href="../image/k_icon.png" type="image/png">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js" defer></script>
+    <script src="../js/angular-route.min.js"></script>
+    <script src="../js/angular-aria.min.js" defer></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.js"></script>    <script src="../js/angular-ui-router.js" defer></script>
+    <script src="../js/angular-ui-router.js" defer></script>
+
+
+    <script src="../js/index.js"></script>
+    <script src="../js/home.js"></script>
+    <script src="../js/show.js"></script>
+    <script src="../js/checkout.js"></script>
+
+
+    <link rel="stylesheet" href="https://material.angularjs.org/1.1.5/docs.css">
+    <link href="../css/index.css" rel="stylesheet">
+    <link href="../css/angular-dropdowns.css" rel="stylesheet">
+    <link href="../css/angular-material.css" rel="stylesheet">
+
+
+    <style>
+        .heading {
+
+            display: table !important;
+            position: relative;
+            margin: 0 auto 2em;
+            text-align: center;
+            font-weight: 400;
+            font-size: 2rem;
+            padding: 20px;
+            color: black;
+            border-bottom: 2px solid black;
+            width: 70%;
+
+        }
+
+        md-grid-tile:hover {
+            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+        }
+
+        table {
+
+            font-size: 10px;
+        }
+
+        td {
+            font-size: 10px;
+
+        }
+    </style>
+</head>
+
+<body style="background:white;max-width: 100%;font-family: 'Merriweather', serif;font-size: 10px;margin:auto"
+    ng-app="MyApp">
+    <div id="loader" style="overflow: hidden;">
+        <h1 data-text="Loading..." style="font-size: 25px"></h1>
+    </div>
+
+
+    
+    <div ng-include="'header.html'"></div>
+
+    <div ng-controller="cartctrl">
+
+                    <div class="mobile_footer">
+                             <div ng-include="'cart_mobile.html'"></div>
+                    </div>
+                    <div class="desk_footer">
+                            <div ng-include="'cart_desk.html'"></div>
+                    </div>
+
+
+
+
+    </div>
+
+    <div ng-include="'footer.html'"></div>
+
+</body>

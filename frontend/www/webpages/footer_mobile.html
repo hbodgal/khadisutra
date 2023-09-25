@@ -1,0 +1,139 @@
+
+<div class="mobile_footer" >
+        <script>
+           $(function () {
+               var Accordion = function (el, multiple) {
+                   this.el = el || {};
+                   this.multiple = multiple || false;
+       
+                   // Variables privadas
+                   var links = this.el.find('.link');
+                   // Evento
+                   links.on('click', { el: this.el, multiple: this.multiple }, this.dropdown)
+               }
+       
+               Accordion.prototype.dropdown = function (e) {
+                   var $el = e.data.el;
+                   $this = $(this),
+                       $next = $this.next();
+       
+                   $next.slideToggle();
+                   $this.parent().toggleClass('open');
+       
+                   if (!e.data.multiple) {
+                       $el.find('.submenu').not($next).slideUp().parent().removeClass('open');
+                   };
+               }
+       
+               var accordion = new Accordion($('#accordian'), false);
+           });
+       
+       function info() {
+           var x = document.getElementById("footer");
+       
+           if (x.style.display === "none") {
+               x.style.display = "block";
+           } else {
+               x.style.display = "none";
+       
+           }
+       }
+       
+       
+       $(document).ready(function(){ 
+           $(window).scroll(function(){
+       
+               if ($(this).scrollTop() > 1000) { 
+                   $('#scroll').fadeIn(); 
+               } else { 
+                   $('#scroll').fadeOut(); 
+               } 
+           });
+           $('#scroll').click(function(){ 
+               $("html, body").animate({ scrollTop: 0 }, 600); 
+               return false; 
+           }); 
+       });
+       </script>
+       
+       <div style="position: relative;z-index: 6;background: white;">
+       <div style="align-content:center;text-align:center;padding : 100px 0 20px 0;color: gray;">
+           <div id="scroll" style="width: fit-content;margin: auto">
+               <p style="font-size: 15px;margin:0">back to top</p> 
+               <img href="javascript:void(0)" class="backbtn" style="height:20px;width:20px;color: gray"
+               src="../image/up-arrow.png" />
+               </div>
+                 </div> 
+       <div id="footer" class="footer"  ng-controller="footerctrl" style="background:white;font-family: 'Merriweather', serif;z-index:6">
+           <ul id="accordian" class="accordion" style="border-bottom:1px solid #CCC;text-transform:capitalize">
+               <li style="margin:unset">
+                   <div class="link">Assistance</div>
+                   <ul class="submenu" style="text-align: left;line-height:2rem">
+                                <li style="list-style-type: none;color:black">Assistance</li>
+                                <li style="list-style-type: none">Customer Service</li>
+                                <li style="list-style-type: none">How To Order</li>
+                                <li style="list-style-type: none">Billing & Payments</li>
+                                <li style="list-style-type: none">Shipping & Delivery</li>
+                                <li style="list-style-type: none">Returns & Exchanges</li>
+                                <li style="list-style-type: none">Product Care</li>
+                                <li style="list-style-type: none">FAQs</li>
+                   </ul>
+               </li>
+               <li style="margin:unset">
+                   <div class="link">About</div>
+                   <ul class="submenu" style="text-align: left;line-height:2rem">
+                        <li style="list-style-type: none">The Company</li>
+                        <li style="list-style-type: none">The history</li>
+                        <li style="list-style-type: none">Careers</li>
+                        <li style="list-style-type: none">Contact Us</li>
+                   </ul>
+               </li>
+               <li style="margin:unset">
+                    <div class="link">Terms of Services</div>
+                    <ul class="submenu" style="text-align: left;line-height:2rem">
+    
+                            <li style="list-style-type: none">Terms & Conditions</li>
+                <li style="list-style-type: none">Privacy Policy</li>
+                    </ul>
+                </li>
+               
+               <li style="margin:unset">
+                   <div class="link">Follow Us                            
+                       <img style="height:20px;width:20px;float:right;text-decoration: none;margin-right: 10px" src="../image/facebook.svg" />
+                       <img style="height:20px;width:20px;float:right;text-decoration: none;margin-right: 10px" src="../image/instagram.svg" />
+                       <img style="height:20px;width:20px;float:right;text-decoration: none;margin-right: 10px" src="../image/twitter.svg" />
+       
+                   </div>
+               </li>
+               <li style="margin:unset;list-style-type: none;">
+       
+                           <div class="link" for="email" style="font-weight: 500">Sign Up for Future Updates
+                           <input ng-model="email_add" type="text" placeholder="Enter Email" required>
+                           <p ng-if="emailalert" style="margin: unset;font-size: 1.2rem;cursor: pointer;outline: none;color:red">{{error_message}}</p>
+                           <p ng-if="success_alert"  style="margin: unset;font-size: 1.2rem;cursor: pointer;outline: none;color:green">{{success_message}}</p>       
+                           <!-- <p ng-if="email_empty" style="margin: unset;font-size: 1.2rem;cursor: pointer;outline: none;color: red">Please enter Your Email ID.</p>Please enter Email ID in proper format -->
+                           <p style="text-align: justify;margin: unset;font-size: 1rem;cursor: pointer;outline: none"> By subscribing, you accept that you would like to hear about products from the Khaddargram International. For more details, please read our
+                            <a href="#" style="outline: none;color:black;text-decoration: underline">Privacy Policy</a>.
+                           </p>
+                           <input type="button" ng-click="newsletter(true)" class="registerbtn" value="submit">
+       
+                       
+                         </div>
+                         
+                         
+                       </li>
+               
+       
+           </ul>
+          
+           <p style="text-align: center;font-size: 1rem">By Khaddargram International</p>
+       
+       
+       </div>
+       </div>
+       </div>
+       <!-- <div style="padding:10px">
+       
+           </div> -->
+       
+       

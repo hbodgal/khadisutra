@@ -1,0 +1,101 @@
+<html style="background: white;max-width: 100%" lang="en">
+
+<head>
+
+    <title>Kcurrent</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
+
+    <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet" defer>
+ 
+    <link rel="icon" href="../image/k_icon.png" type="image/png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+    <!-- <script src="../js/jquery-1.8.0.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js" defer></script>
+    <script src="../js/angular-route.min.js"></script>
+    <script src="../js/angular-aria.min.js" defer></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.js"></script>    <script src="../js/angular-ui-router.js" defer></script>
+    <script src="../js/angular-ui-router.js" defer></script>
+ 
+
+    <script src="../js/index.js"></script>
+    <script src="../js/home.js"></script>
+    <script src="../js/show.js" ></script>
+    <script src="../js/checkout.js" ></script>
+
+
+    <link href="../css/angular-material.css" rel="stylesheet" defer>
+    <link rel="stylesheet" href="https://material.angularjs.org/1.1.5/docs.css" defer>
+    <link href="../css/menu.css" rel="stylesheet">
+    <link href="../css/home.css" rel="stylesheet">
+
+
+    <style>
+        md-grid-tile:hover {
+            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+        }
+    </style>
+    
+    <script defer>
+$(function () {
+        var Accordion = function (el, multiple) {
+            this.el = el || {};
+            this.multiple = multiple || false;
+    
+            // Variables privadas
+            var links = this.el.find('.link');
+            // Evento
+            links.on('click', { el: this.el, multiple: this.multiple }, this.dropdown)
+        }
+    
+        Accordion.prototype.dropdown = function (e) {
+            var $el = e.data.el;
+            $this = $(this),
+                $next = $this.next();
+    
+            $next.slideToggle();
+            $this.parent().toggleClass('open');
+    
+            if (!e.data.multiple) {
+                $el.find('.submenu').not($next).slideUp().parent().removeClass('open');
+            };
+        }
+    
+        var accordion = new Accordion($('#accordion'), false);
+    });
+    </script>
+</head>
+
+<body ng-app="MyApp">
+        <noscript>
+                <META HTTP-EQUIV="Refresh" CONTENT="0;URL=ErrorPage.html">
+              </noscript>
+
+              <div id="horizontal" style="position: relative;-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background:url(image/KhaadiHome.jpg);height: calc(100vh - 100px);background-size: cover;font-weight:bolder;background-position: center;overflow: hidden;">
+              </div> 
+
+              <div style="margin:auto;align-content:center">
+                <table align="center">
+                    <tr>
+                        <td ng-repeat="i in slides">
+                            <div>
+                                <img src="../image/{{i}}" style="margin:auto;height:auto;width:100%;max-width:400px;display: block;padding: 5%;padding-top:50px">
+                                <div style="padding:10px 0 30px 0;margin:-60px auto;z-index:1;width:80%;align-content: center;position: relative;background: white">
+                                    <p style="text-align: center;margin-bottom: unset;font-size: 12px">AW' 18
+                                        Latest Arrival</p>
+                                    <p style="text-align: center;text-decoration: underline;font-size:10px ">Shop
+                                        Now</p>
+                                </div>
+                            </div>
+                            <div>
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+</body>
+</html>

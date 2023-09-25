@@ -1,0 +1,106 @@
+<div id="footer" class="footer"  ng-controller="footerctrl" style="background:white;font-family: 'Merriweather', serif;z-index:6">
+
+        <div style="background:whitesmoke;padding:30px 15px 30px 15px;margin-top:100px;height:250px">
+            <!-- <li style="margin:unset"> -->
+            <!-- <div class="link">Assistance</div> -->
+            <!-- <div style="display:inline-block">
+                        <ul style="text-align: left;line-height:2rem;display: inline">
+                            <li style="list-style-type: none">Delivery & return</li>
+                            <li style="list-style-type: none">Product Care</li>
+                            <li style="list-style-type: none">FAQ</li>
+                            <li style="list-style-type: none">Contact Us</li>
+                              
+                        </ul>
+                        </div>
+                        <div  style="display:inline-block;margin:0 30px">
+                        <ul style="text-align: left;line-height:2rem;display: inline">
+                                <li style="list-style-type: none">Terms & Conditions</li>
+                            <li style="list-style-type: none">Privacy Policy</li>
+                            <li style="list-style-type: none">About US</li>
+                        </ul>
+                        </div> -->
+                        <div style="margin:auto;align-content:center;text-align:center;font-size: 12px;letter-spacing: 1">
+                        <div style="display:inline-block;width:20%">
+                        <ul style="text-align: left;line-height:2rem;display: inline">
+                                <li style="list-style-type: none;font-weight: bold">Assistance</li>
+                                <li style="list-style-type: none">Delivery & return</li>
+                                <li style="list-style-type: none">Product Care</li>
+                                <li style="list-style-type: none">FAQ</li>
+                                <li style="list-style-type: none">Contact Us</li>
+                                  
+                            </ul>
+                        </div>
+                        <div style="display:inline-block;width:20%;vertical-align: top">
+
+                                <ul style="text-align: left;line-height:2rem;display: inline">
+                                        <li style="list-style-type: none;font-weight: bold">Terms of Services</li>
+
+                                        <li style="list-style-type: none">Terms & Conditions</li>
+                            <li style="list-style-type: none">Privacy Policy</li>
+                            <li style="list-style-type: none">About US</li>
+                                          
+                                    </ul>
+                                </div>
+                                
+                                        <div style="display:inline-block;width:20%;vertical-align: top;text-align:left;">
+                                               <ul style="margin-bottom:20px"> <li style="text-align:left;font-weight: bold">Follow Us </li> </ul>              
+                                                <img style="height:20px;width:20px;text-decoration: none;display:inline-block;margin:0 10px" src="../image/facebook.svg" />
+                                                <img style="height:20px;width:20px;text-decoration: none;display:inline-block;margin:0 10px" src="../image/instagram.svg" />
+                                                <img style="height:20px;width:20px;text-decoration: none;display:inline-block;margin:0 10px" src="../image/twitter.svg" />
+                                                
+                                                </div>
+                                                <!-- <li style="margin:unset;list-style-type: none;"> -->
+                                                        <div style="display:inline-block;width:20%;vertical-align: top;text-align: left">
+
+                                                        <div for="email" style="font-weight: 500">Sign Up for Future Updates
+                                                        <input id="email_add" type="text" placeholder="Enter Email" ng-blur="newsletter(false)" required>
+                                                        <input type="button" style="display:inline" ng-click="newsletter(true)" class="registerbtn" value="submit">
+
+                                                        <p ng-if="emailalert" style="margin: unset;font-size: 1.2rem;cursor: pointer;outline: none;color: red">Please enter Email ID in proper format.</p>
+                                                        <p ng-if="email_empty" style="margin: unset;font-size: 1.2rem;cursor: pointer;outline: none;color: red">Please enter Your Email ID.</p>
+                                                        <p style="text-align: justify;margin: unset;font-size: 1rem;cursor: pointer;outline: none"> By subscribing, you accept that you would like to hear about products from the Khadisutra Group. For more details, please read our
+                                                         <a href="#" style="outline: none">Privacy Policy</a>.
+                                                        </p>
+                                                        <!-- <input type="button" ng-click="newsletter(true)" class="registerbtn" value="submit"> -->
+                                    
+                                                    
+                                                      </div>
+                                                        </div>
+                                                      
+                                                    <!-- </li> -->
+                        </div>
+                        
+                        
+
+
+            <!-- <li style="margin:unset">
+                        <div>Follow Us                            
+                            <img style="height:20px;width:20px;float:right;text-decoration: none;margin-right: 10px" src="../image/facebook.svg" />
+                            <img style="height:20px;width:20px;float:right;text-decoration: none;margin-right: 10px" src="../image/instagram.svg" />
+                            <img style="height:20px;width:20px;float:right;text-decoration: none;margin-right: 10px" src="../image/twitter.svg" />
+            
+                        </div>
+                    </li> -->
+            <!-- <li style="margin:unset;list-style-type: none;">
+            
+                                <div for="email" style="font-weight: 500">Sign Up for Future Updates
+                                <input id="email_add" type="text" placeholder="Enter Email" ng-blur="newsletter(false)" required>
+            
+                                <p ng-if="emailalert" style="margin: unset;font-size: 1.2rem;cursor: pointer;outline: none;color: red">Please enter Email ID in proper format.</p>
+                                <p ng-if="email_empty" style="margin: unset;font-size: 1.2rem;cursor: pointer;outline: none;color: red">Please enter Your Email ID.</p>
+                                <p style="text-align: justify;margin: unset;font-size: 1rem;cursor: pointer;outline: none"> By subscribing, you accept that you would like to hear about products from the Khadisutra Group. For more details, please read our
+                                 <a href="#" style="outline: none">Privacy Policy</a>.
+                                </p>
+                                <input type="button" ng-click="newsletter(true)" class="registerbtn" value="submit">
+            
+                            
+                              </div>
+                              
+                              
+                            </li> -->
+
+
+
+        </div>
+        <p style="text-align: center;font-size: 1rem;padding:15px 5px">By Khadisutra Group</p>
+</div>
