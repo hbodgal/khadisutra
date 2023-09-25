@@ -1,0 +1,223 @@
+<script>
+        $(function () {
+                var Accordion = function (el, multiple) {
+                    this.el = el || {};
+                    this.multiple = multiple || false;
+            
+                    // Variables privadas
+                    var links = this.el.find('.link');
+                    // Evento
+                    links.on('click', { el: this.el, multiple: this.multiple }, this.dropdown)
+                }
+            
+                Accordion.prototype.dropdown = function (e) {
+                    var $el = e.data.el;
+                    $this = $(this),
+                        $next = $this.next();
+            
+                    $next.slideToggle();
+                    $this.parent().toggleClass('open');
+            
+                    if (!e.data.multiple) {
+                        $el.find('.submenu').not($next).slideUp().parent().removeClass('open');
+                    };
+                }
+            
+                var accordion = new Accordion($('#accordion_one'), false);
+            });
+            </script>
+
+<div id="loader" ng-if="showloader" style="overflow: hidden;text-align:center;">
+        <h1 data-text="Loading..." style="font-size: 25px"></h1>
+    </div>
+
+
+    <div layout="column" style="min-height : 100%">
+        <div>
+                
+                
+
+
+
+
+
+
+                    
+            <div id="id2"  style="background:white;">
+                    <!-- <img src="../image/rajwada_wall4.jpg" style="height: calc(100vh - 200px);display: block;padding: 5%;margin: auto"> -->
+                  
+                    <div>
+                    <h2 style="background:#efecec;text-align:center;padding:2%;border-bottom: 1px solid whitesmoke;color:gray;text-transform:uppercase;font-size: 1.3em;letter-spacing: 1.2px;font-weight: 500;">
+                            {{category_name}} 
+                            </h2>
+                            </div>
+     
+            <div layout="row">
+
+                <div id="filtermenu" class="filternav" style="display: inline;width:20%;float:left">
+                    <div id="id3" class="slidebar" style="background:white;">
+
+                        <md-content class="page-container" layout="column" style="background:white;padding: 0 15px">
+
+                            
+                            
+                           
+                                    <ul id="accordion_one" class="accordion" style="border-bottom:1px solid #CCC;overflow: visible;">
+                                    <p>Refine :<p>
+                                            <li style="margin:unset">
+                                                    <div class="link">By Color</div>
+                                                    <ul class="submenuopen">
+                                                        <li ng-repeat="i in colors track by $index" ng-style="{ 'color' : (filt{{i}} == true) ? 'firebrick' : 'black'}"
+                                                            style="outline:none;list-style-type: disc;cursor:pointer" id="{{i}}" ng-click="toggle(i, selectedcolor)">{{i}}
+        
+        
+        
+                                                        </li>
+                                                    </ul>
+                                                    <!-- <p>{{colorfilter}}</p> -->
+                                                </li>
+                                <li style="margin:unset">
+                                        <div class="link">By Material</div>
+                                        <ul class="submenuopen" style="text-align: left;line-height:2rem;">
+                                            <li ng-repeat="i in fabrics track by $index" id="{{i}}" ng-style="{ 'color' : (filt{{i}} == true) ? 'firebrick' : 'black'}" style="outline:none;cursor:pointer" ng-click="toggle(i, selectedfabric)">{{i}}
+    
+                                                <!-- <md-checkbox class="color" ng-click="colorfilter(i)" ng-style="{'background-color':'{{i}}'}">{{i}}</md-checkbox> -->
+                                                <!-- <md-checkbox class="color" ng-click="toggle(i, selectedcolor)" ng-style="{'background-color':'{{i}}'}"> -->
+                                                <!-- <md-checkbox class="color"  ng-checked="filt{{i}}" ng-click="toggle(i, selectedcolor)" ng-style="{'background-color':'{{i}}'}">
+                                                                          
+                                                                                                              
+                                                                                                          {{i}}</md-checkbox> -->
+    
+    
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li style="margin:unset;">
+                                       <div class="link">By discount</div>
+                                        <ul class="submenuopen" style="text-align: left;line-height:2rem;font-size:12px;">
+                                            <li style="outline:none;cursor:pointer;" ng-click="filter_two(10,100,'discount')">10% or more
+                                            </li>
+                                            <li style="outline:none;cursor:pointer" ng-click="filter_two(25,100,'discount')">25% or more
+                                            </li>
+                                            <li style="outline:none;cursor:pointer" ng-click="filter_two(35,100,'discount')">35% or more
+                                            </li>
+                                            <li style="outline:none;cursor:pointer" ng-click="filter_two(50,100,'discount')">50% or more
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li style="margin:unset">
+                                        <div class="link">By price</div>
+                                        <ul class="submenuopen" style="text-align: left;line-height:2rem;font-size:12px;">
+                                            <li style="text-decoration:none;outline:none;cursor:pointer" ng-click="filter_two(0,1000,'price')">Under &#x20b9; 1000
+                                            </li>
+                                            <li style="text-decoration:none;cursor:pointer" ng-click="filter_two(1000,2000,'price')">&#x20b9; 1000 - &#x20b9; 2000
+                                            </li>
+                                            <li style="text-decoration:none;cursor:pointer" ng-click="filter_two(2000,3500,'price')">&#x20b9; 2000 - &#x20b9; 3500
+                                            </li>
+                                            <li style="text-decoration:none;cursor:pointer" ng-click="filter_two(3500,4500,'price')">&#x20b9; 3500 - &#x20b9; 4500
+                                            </li>
+                                            <li style="text-decoration:none;cursor:pointer" ng-click="filter_two(4500,1000000,'price')">&#x20b9; 4500 - &#x20b9; 1000000
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    </ul>
+
+                              
+
+                            <!-- <md-button ng-click="executefilter()" style="background:#CCC;color:#222;width:160px;font-family:Merriwether;display:block;padding:5px;margin:50px auto">Apply
+                                filter</md-button> -->
+
+                        </md-content>
+                    </div>
+                </div>
+               
+
+                <div style="background:white;display: inline-block;width:80%;align-content: right;">
+<div>
+
+
+                        <div style="text-align:center;margin-bottom: 20px;float:right;padding-right:20px">
+                              <p style="display:inline;font-size:14px">Sort by :</p> 
+                              <select class="sortbox" ng-model="sorting" placeholder="Sort by" ng-change="onChange()" >
+                                    <option value="none" ng-selected="selected">None</option>
+                                    <option value="hightolow">High to Low</option>
+                                    <option value="lowtohigh">Low to High</option>
+                                    <option value="bestseller">Best Seller</option>
+                                    <option value="newestfirst">Newest First</option>
+                                </select>
+                            </div>
+                     </div>
+                    <!-- text-shadow:0 0 6px rgba(0,0,0,.3) -->
+                    <md-content flex layout-padding style="background:white;margin-top: 50px;padding:20px 20px 20px 20px" ng-if="!showmsg">
+
+                        <md-grid-list flex md-cols-gt-md="4" md-cols-md="3" md-cols-sm="2" md-gutter="1%" md-cols-xs="2"
+                            md-row-height="1:1.8">
+                            <md-grid-tile ng-repeat="i in images" layout="column">
+                                <md-card flex="100" style="padding:none">
+                                    <img id="{{i.p_id}}" style="display:inline-block;outline:none;height:auto;width:100%"
+                                        ng-click="openproduct(i.p_id)" ng-src="{{imgpath}}/product/{{i.p_display_photo}}" />
+
+                                    <md-card-content style="text-align:center;background:white;color:black;padding:0pt">
+
+                                        <h5 class="pr_name" ng-click="openproduct(i.p_id)" style="outline:none;min-height: 15px;max-height: 15px"
+                                            layout-align="start start" id="{{i.p_id}}">{{i.p_name}}</h5>
+                                        <h4 ng-click="openproduct(i.p_id)" style="outline:none;display:inline;text-decoration: line-through;font-size:1.3rem;"
+                                            ng-if="i.p_discount_available">&#x20b9; {{i.p_price}}</h4>
+                                        <h4 ng-click="openproduct(i.p_id)" style="outline:none;display: inline;font-size:1.3rem;"
+                                            id="{{i.p_id}}">&#x20b9; {{i.p_final_price}}</h4>
+
+                                    </md-card-content>
+
+                                </md-card>
+                            </md-grid-tile>
+                        </md-grid-list>
+                    </md-content>
+                    <div ng-if="showmsg" style="margin:1% auto;text-align:center;padding-top:10%">
+                            <img src="../image/not-found.svg" style="width:70px;">
+                            <p>We can't find products matching the selection.</p>
+                            </div>
+                </div>
+            </div>
+            <!-- <div ng-if="showmsg" style="text-align: center;margin-top: 20%;padding-bottom:100px;align-content: center;vertical-align:middle;overflow: hidden;">
+                    <h3>No products found.Continue Shopping!!</h3>
+        
+                </div> -->
+        </div>
+
+        <div style="background:white" ng-if="showpageno">
+            <div style="background:white;margin-bottom:5%" ng-controller="paginationctrl">
+                <center>
+                    <!-- <center> <md-button ng-click="loadMore()" style="margin-bottom:4%">LOAD MORE</md-button></center> -->
+                    <md-button ng-click="previous()" style="display: inline-block;" class="md-icon-button" href="" aria-label="backward" >
+                        <!-- <md-tooltip>Previous Page</md-tooltip> -->
+                        <md-icon class="material-icons" md-svg-icon="../image/back.svg" />
+                    </md-button>
+                    <!-- <md-button ng-click="changepage(i)" ng-repeat="i in pages"> -->
+                            <div style="display: inline-block;margin:10px">
+                                    {{currentPage}}
+                                    </div>
+                        <div style="display: inline-block;margin:10px">
+                         out of
+                        </div>
+                        <div style="display: inline-block;margin:10px">
+                                {{pages}}
+                                </div>
+                    <!-- </md-button> -->
+                    
+
+
+                    <md-button style="display: inline-block;" ng-click="next()" class="md-icon-button" href="" aria-label="forward">
+                        <!-- <md-tooltip>Next Page</md-tooltip> -->
+                        <md-icon class="material-icons" md-svg-icon="../image/next.svg" />
+                    </md-button>
+                </center>
+            </div>
+
+
+
+        </div>
+
+    </div>
+    </div>
+
+

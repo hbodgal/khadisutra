@@ -1,0 +1,66 @@
+<script>
+        jQuery(document).ready(function($) {
+        
+var alterClass = function() {
+          
+        console.log("alter class");  
+            var $this = $('.sizechart');
+            var newrows = [];
+            $this.find("tr").each(function(){
+                var i = 0;
+                $(this).find("td").each(function(){
+                    i++;
+                    if(newrows[i] === undefined) { newrows[i] = $("<tr></tr>"); }
+                    newrows[i].append($(this));
+                });
+            });
+            $this.find("tr").remove();
+            $.each(newrows, function(){
+                $this.append(this);
+            });
+        
+};
+
+
+var wid = document.body.clientWidth;
+          var size = 1;
+          // if(wid < 735)
+          // {
+          //   size = 1;
+          // }
+          // else
+          // {
+          //   size = 0;
+          // }
+
+          if(wid < 735 && size == 1)
+          {
+            console.log("loaded in small");
+            alterClass();
+            size = 0;
+          }
+
+
+
+
+$(window).resize(function(){
+  wid = document.body.clientWidth;
+        if(wid > 735 && size == 0)
+        {
+          console.log("small to big");
+            alterClass();
+            size = 1;
+        }
+        if(wid < 735 && size == 1)
+        {
+            console.log("big to small");
+            alterClass();
+            size = 0;
+        }
+
+      });
+      //Fire it when the page first loads:
+     //alterClass();
+      
+    });
+</script>

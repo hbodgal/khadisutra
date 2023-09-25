@@ -1,0 +1,958 @@
+<html>
+
+<head>
+  <title>Kcurrent</title>
+  <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+  <link rel="icon" href="../image/k_icon.png" type="image/png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-route.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+  <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-114/svg-assets-cache.js"></script>
+  <script src="https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.5/angular-material.js"></script>
+  <script src="../js/jquery-1.8.0.min.js"></script>
+
+  <!-- <script src="js/angular-min.js"></script>  -->
+
+  <script src="../js/angular-ui-router.js"></script>
+
+  <!-- <link rel="stylesheet" href="https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.5/angular-material.css">  -->
+  <link rel="stylesheet" href="https://material.angularjs.org/1.1.5/docs.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="../css/index.css" rel="stylesheet">
+
+  <link href="../css/angular-dropdowns.css" rel="stylesheet">
+  <link href="../css/angular-material.css" rel="stylesheet">
+
+
+  <script src="../js/angular-animate.min.js"></script>
+  <script src="../js/angular-aria.min.js"></script>
+  <script src="../js/angular-dropdowns.js"></script>
+  <script src="../js/angular-material.js"></script>
+  <script src="../js/angular-messages.min.js"></script>
+  <script src="../js/angular-route.min.js"></script>
+  <script src="../js/local-storage.js"></script>
+  <script src="../js/angular.js"></script>
+  <script src="../js/assets-cache.js"></script>
+  <script src="../js/gulpfile.js"></script>
+  <script src="../js/index.js"></script>
+  <script src="../js/zoom.js"></script>
+
+
+  <!-- <link rel="stylesheet" href="https://rawgit.com/angular/bower-material/master/angular-material.css"> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.6/angular.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.6/angular-animate.js"></script>
+  <script src="https://rawgit.com/angular/bower-material/master/angular-material.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.6/angular-aria.js"></script>
+
+
+
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script>
+    $(window).load(function () {
+      $(".se-pre-con").fadeOut("slow");;
+    });  
+  </script>
+
+
+
+  <!-- new menu start -->
+  <!-- <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script> -->
+
+  <!-- ajax -->
+
+  <!--
+  <script src="js/angular-animate.min.js"></script>
+  <script src="js/angular-aria.min.js"></script>
+  <script src="js/angular-dropdowns.js"></script>
+  <script src="js/angular-material.js"></script>
+  <script src="js/angular-messages.min.js"></script>
+  <script src="js/angular-route.min.js"></script>
+  <script src="js/angular.js"></script>
+  <script src="js/assets-cache.js"></script>
+  <script src="js/gulpfile.js"></script>
+  <script src="js/index.js"></script>-->
+  <style>
+    .header md-toolbar md-icon.md-default-theme {
+      color: white;
+    }
+  </style>
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+
+
+
+
+
+
+
+  <!--<style>
+  .menuBardemoBasicUsage .page-container {
+    padding: 32px; }
+  
+  .menuBardemoBasicUsage .page {
+    margin: 0 auto;
+    padding: 24px;
+    max-width: 680px;
+    box-shadow: 0px 1px 2px 1px rgba(0, 0, 0, 0.25); }
+  
+  .menuBardemoBasicUsage .page h1 {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-top: 0;
+    font-weight: normal; }
+  
+  .menuBardemoBasicUsage .page p {
+    line-height: 1.6rem; }
+  
+  
+  /*
+  Copyright 2016 Google Inc. All Rights Reserved. 
+  Use of this source code is governed by an MIT-style license that can be foundin the LICENSE file at http://material.angularjs.org/HEAD/license.
+  */
+</style>-->
+
+</head>
+
+<body style="background:white" ng-app="MyApp">
+
+
+
+  <!-- <h6>
+    <center>New to Khadisutra? Register now & get $25 OFF + FREE Shipping*
+      <a href="webpages/details.html">Details</a>
+    </center>
+
+    <hr>
+  </h6> -->
+
+
+
+
+
+  <div ng-controller="AppCtrl" class="header">
+
+    <!--   sidenav starts   -->
+    <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left">
+      <md-toolbar layout="row" style="background-color:rgb(240, 239, 239);color:black;border-bottom-style:solid;border-color:rgb(240, 239, 239)">
+        <div class="md-toolbar-tools">
+          <h2>
+            <span>Shop by Department</span>
+          </h2>
+          <span flex></span>
+          <md-button class="md-icon-button" aria-label="Close Side Panel" ng-click="closeSideNavPanel()">
+            <md-tooltip>Close Side Panel</md-tooltip>
+            <md-icon class="md-default-theme" class="material-icons" style="color:black;">&#xE5CD;</md-icon>
+
+          </md-button>
+        </div>
+      </md-toolbar>
+      <md-content layout-padding="">
+
+
+
+
+
+        <md-list>
+          <md-list-item>
+            <md-icon class="md-default-theme" class="material-icons">&#xE851;</md-icon>
+            <p>MEN</p>
+          </md-list-item>
+          <md-list-item>
+            <md-icon class="md-default-theme" class="material-icons">&#xE0C9;</md-icon>
+            <p>WOMEN</p>
+          </md-list-item>
+          <md-list-item>
+            <md-icon class="material-icons">&#xE150;</md-icon>
+            <p>BOYS</p>
+          </md-list-item>
+          <md-list-item>
+            <md-icon class="md-default-theme" class="material-icons">&#xE8B8;</md-icon>
+            <p>GIRLS</p>
+          </md-list-item>
+          <md-list-item>
+            <md-icon class="md-default-theme" class="material-icons">&#xE8B8;</md-icon>
+            <p>CART</p>
+          </md-list-item>
+          <md-list-item>
+            <md-icon class="md-default-theme" class="material-icons">&#xE8B8;</md-icon>
+            <p>WISHLIST</p>
+          </md-list-item>
+        </md-list>
+      </md-content>
+    </md-sidenav>
+
+    <!-- sidenav ends -->
+
+
+
+    <!-- toolbar starts -->
+    <!-- DESKTOP  -->
+    <!-- <md-toolbar class="desktop" style="background-color:white;"> -->
+      <!-- <div class="md-toolbar-tools">
+        <!--  <md-button class="md-icon-button" aria-label="Icon">
+                    <md-tooltip>Icon</md-tooltip>
+                    <md-icon class="md-default-theme" md-svg-icon="fb.svg"></md-icon>
+                  </md-button> -->
+        <!-- <h2>
+          <span class="fill_space"></span>
+        </h2>
+        <md-button class="md-button" aria-label="works" href="howitworks.html" style="color:black;"> How it Works</md-button>
+        <md-button class="md-button" aria-label="brand" href="brand_promise.html" style="color:black;">Brand Promise</md-button>
+        <md-button class="md-button" aria-label="customization" href="fabric_customization.html" style="color:black;">Fabric Customization</md-button>
+
+        <md-input-container md-no-float class="md-accent" flex="30" style="padding-bottom:0px;margin-left:25px">
+
+          <input ng-model="searchInput" placeholder="Search here" ng-keypress="searchctrl()" style="color:rgb(252, 251, 249);color:black;font-size:15px;padding-left:25px;margin-left:5px"
+          />
+        </md-input-container>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="opencard($event)" aria-label="account">
+          <md-tooltip>account</md-tooltip>
+          <i class="material-icons" style="width:24px;height:24px;color:black;">account_circle</i>
+        </md-button>
+        <md-button class="md-icon-button" href="wishlist.html" aria-label="wishlist">
+          <md-tooltip>wishlist</md-tooltip>
+          <i class="material-icons" style="width:24px;height:24px;color:black;">favorite</i>
+        </md-button>
+
+        <md-button class="md-icon-button" href="settings.html" aria-label="Settings">
+          <md-tooltip>Settings</md-tooltip>
+          <md-icon class="material-icons" style="color:black;">&#xE8B8;</md-icon>
+        </md-button>
+
+        <md-button class="md-icon-button" href="help.html" aria-label="Help">
+          <md-tooltip>Help</md-tooltip>
+          <md-icon class="material-icons" style="color:black;">&#xE887;</md-icon>
+        </md-button>
+        <md-button class="md-icon-button" href="cart.html" aria-label="Cart">
+          <md-tooltip>Cart</md-tooltip>
+          <md-icon class="material-icons" style="color:black;">shopping_cart</md-icon>
+        </md-button>
+      </div> --> 
+
+
+
+
+    <!-- </md-toolbar> -->
+
+
+
+    <!--tablet-->
+    <md-toolbar class="tablet" style="background-color:white">
+
+      <div class="md-toolbar-tools">
+        <div ng-cloak>
+
+
+          <button class="md-button md-raised md-default" ng-click="$mdOpenMenu()">
+            FILTER
+          </button>
+
+
+
+        </div>
+
+        <span flex></span>
+        <span flex></span>
+
+        <md-input-container md-no-float class="md-accent" flex="40" style="padding-bottom:0px;margin-left:25px">
+
+          <input ng-model="searchInput" ng-keypress="searchctrl()" placeholder="Search here" style="color:black;font-size:15px;padding-left:25px;margin-left:5px">
+        </md-input-container>
+        <span flex></span>
+
+        <md-button class="md-icon-button" href="./webpages/wishlist.html" aria-label="wishlist">
+          <md-tooltip>wishist</md-tooltip>
+          <i class="material-icons" style="width:24px;height:24px;color:black;">favorite</i>
+        </md-button>
+
+
+        <md-button class="md-icon-button" href="./webpages/cart.html" aria-label="Cart">
+          <md-tooltip>Cart</md-tooltip>
+          <md-icon class="material-icons" style="color:black;">shopping_cart</md-icon>
+        </md-button>
+
+
+        <div ng-cloak>
+          <md-menu-bar>
+            <md-menu>
+
+              <button class="md-button md-raised md-default" ng-click="$mdOpenMenu()">
+                MORE
+              </button>
+              <md-menu-content>
+                <md-menu-item>
+                  <md-button href="enter url here">USER DETAILS</md-button>
+
+                  <md-tooltip>User</md-tooltip>
+
+                  </md-button>
+                </md-menu-item>
+                <md-menu-item>
+                  <md-button href="./webpages/howitworks.html">HOW IT WORKS</md-button>
+                  <!--   <md-menu>
+                                       <md-button ng-click="$mdOpenMenu()">Link1</md-button>
+                                       <md-menu-content>
+                                         <md-menu-item><md-button>Document</md-button></md-menu-item>
+                                         <md-menu-item><md-button>File</md-button></md-menu-item>
+                                       </md-menu-content>
+                                     </md-menu>-->
+                </md-menu-item>
+
+                <md-menu-item>
+                  <md-button href="./webpages/brand_promise.html">BRAND PROMISE</md-button>
+
+                </md-menu-item>
+                <md-menu-item>
+
+                  <md-button href="./webpages/fabric_customization.html">FABRIC CUSTOMIZATION</md-button>
+
+                </md-menu-item>
+                <md-menu-item>
+
+                  <md-button href="./webpages/settings.html">SETTINGS</md-button>
+                </md-menu-item>
+                <md-menu-item>
+
+                  <md-button href="./webpages/help.html">HELP</md-button>
+
+                </md-menu-item>
+              </md-menu-content>
+            </md-menu>
+          </md-menu-bar>
+
+
+        </div>
+      </div>
+
+
+
+
+
+
+      <!-- <div class="md-toolbar-tools">
+                  <md-button class="md-icon-button" aria-label="Icon">
+                    <md-tooltip>User</md-tooltip>
+                    <md-icon class="md-default-theme" md-svg-icon="fb.svg"></md-icon>
+                  </md-button>
+                  <md-button class="md-button" aria-label="account" style="color:black;font-size:10px"> How it Works</md-button>
+                    <md-button class="md-button" aria-label="account" style="color:black;font-size:10px;">Brand Promise</md-button>
+                      <md-button class="md-button" aria-label="account" style="color:black;font-size:10px;">Fabric Customization</md-button>
+      
+                  <md-input-container md-no-float class="md-accent" flex="20" style="padding-bottom:0px;margin-left:25px">
+                    
+                     <input ng-model="searchInput" placeholder="Search here" style="color:black;padding-left:25px;margin-left:5px">
+                  </md-input-container>
+                  <span flex></span>
+             <!--     <md-menu>
+                    <md-menu-content>
+      
+                  <md-menu-item>
+                  <md-button class="md-icon-button" aria-label="account">
+                    <md-tooltip>account</md-tooltip>
+                    <i class="material-icons" style="width:24px;height:24px;color:black;">account_circle</i> 
+                  </md-button></md-menu-item>
+                <md-menu-item>
+                <md-button class="md-icon-button" aria-label="account">
+                  <md-tooltip>account</md-tooltip>
+                  <i class="material-icons" style="width:24px;height:24px;color:black;">account_circle</i> 
+                </md-button></md-menu-item>
+              <md-menu-item>
+              <md-button class="md-icon-button" aria-label="account">
+                <md-tooltip>account</md-tooltip>
+                <i class="material-icons" style="width:24px;height:24px;color:black;">account_circle</i> 
+              </md-button></md-menu-item>
+            <md-menu-item>
+            <md-button class="md-icon-button" aria-label="account">
+              <md-tooltip>account</md-tooltip>
+              <i class="material-icons" style="width:24px;height:24px;color:black;">account_circle</i> 
+            </md-button></md-menu-item>
+              </md-menu-content>
+            </md-menu>--
+         
+        
+                <md-button class="md-icon-button" aria-label="Messages">
+                  <md-tooltip>Favorite</md-tooltip>
+                  <i class="material-icons" style="width:24px;height:24px;color:black;">favorite</i> 
+                </md-button>
+               
+                <md-button class="md-icon-button" aria-label="Settings">
+                  <md-tooltip>Settings</md-tooltip>
+                  <md-icon class="material-icons" style="color:black;">&#xE8B8;</md-icon>
+                </md-button>
+                
+                <md-button class="md-icon-button" aria-label="Help">
+                  <md-tooltip>Help</md-tooltip>
+                  <md-icon class="material-icons" style="color:black;">&#xE887;</md-icon>
+                </md-button>
+                <md-button class="md-icon-button" aria-label="Cart">
+                    <md-tooltip>Cart</md-tooltip>
+                    <md-icon class="material-icons" style="color:black;">shopping_cart</md-icon>
+              </md-button>
+            </div>-->
+    </md-toolbar>
+
+
+
+
+
+
+
+
+
+    <!--mobile-->
+    <md-toolbar class="mobile" style="background-color:white">
+      <div class="md-toolbar-tools" data-ng-show="showMobileMainHeader">
+        <md-button class="md-icon-button" aria-label="More" ng-click="openSideNavPanel()">
+          <!--  <md-tooltip>More</md-tooltip> -->
+          <md-icon class="material-icons" style="color:black;font-size:30px">&#xE5D4;</md-icon>
+        </md-button>
+
+
+        <md-button class="md-icon-button" aria-label="Search" data-ng-click="showMobileMainHeader = false">
+          <md-tooltip>Search</md-tooltip>
+          <md-icon class="material-icons" style="color:black;font-size:30px">&#xE8B6;</md-icon>
+        </md-button>
+        <span flex></span>
+        <div ng-cloak>
+          <md-menu-bar>
+            <md-menu>
+              <button class="md-button md-raised md-default" ng-click="$mdOpenMenu()">
+                MORE
+              </button>
+              <md-menu-content>
+                <md-menu-item>
+                  <md-button ng-click="$mdOpenMenu()">HOW IT WORKS</md-button>
+                  <!--   <md-menu>
+                                       <md-button ng-click="$mdOpenMenu()">Link1</md-button>
+                                       <md-menu-content>
+                                         <md-menu-item><md-button>Document</md-button></md-menu-item>
+                                         <md-menu-item><md-button>File</md-button></md-menu-item>
+                                       </md-menu-content>
+                                     </md-menu>-->
+                </md-menu-item>
+                <md-menu-item>
+                  <md-button ng-click="$mdOpenMenu()">BRAND PROMISE</md-button>
+
+                </md-menu-item>
+                <md-menu-item>
+
+                  <md-button ng-click="$mdOpenMenu()">FABRIC CUSTOMIZATION</md-button>
+
+                </md-menu-item>
+                <md-menu-item>
+
+                  <md-button ng-click="$mdOpenMenu()">SETTINGS</md-button>
+                </md-menu-item>
+                <md-menu-item>
+
+                  <md-button ng-click="$mdOpenMenu()">HELP</md-button>
+
+                </md-menu-item>
+              </md-menu-content>
+            </md-menu>
+          </md-menu-bar>
+
+
+        </div>
+
+      </div>
+
+      <div class="md-toolbar-tools" data-ng-hide="showMobileMainHeader">
+        <md-button class="md-icon-button" aria-label="Back" data-ng-click="showMobileMainHeader = true">
+          <md-tooltip>Back</md-tooltip>
+          <md-icon class="material-icons" style="color:black;font-size:30px">&#xE5C4;</md-icon>
+        </md-button>
+
+
+        <md-input-container md-no-float class="md-accent" flex="80" style="padding-bottom:0px;margin-left:25px">
+
+          <input ng-model="searchInput" placeholder="Search here" style="color:black;font-size:15px;padding-left:25px;margin-left:5px">
+        </md-input-container>
+
+
+
+
+        <span flex></span>
+        <md-button class="md-icon-button" aria-label="Search">
+          <md-tooltip>Search</md-tooltip>
+          <md-icon class="material-icons" style="color:black;font-size:30px">&#xE163;</md-icon>
+        </md-button>
+
+
+
+
+      </div>
+    </md-toolbar>
+  </div>
+
+
+
+  <!--  <div class="desktop">
+       <div ng-controller="toolbartwo" ng-cloak="">
+            <md-content>
+                <md-toolbar class="md-hue-2" style="background-color:white;">
+                <div class="md-toolbar-tools">
+                  <md-button class="md-icon-button" aria-label="Settings">
+                    <md-icon md-svg-icon="img/icons/menu.svg"></md-icon>
+                  </md-button>  
+                  <h2 flex md-truncate></h2>  
+                  <md-button class="md-icon-button" aria-label="Favorite">
+                    <md-icon md-svg-icon="img/icons/favorite.svg" style="color: greenyellow;"></md-icon>
+                  </md-button>  
+                  <md-button class="md-icon-button" aria-label="More">
+                <!--    <md-icon md-svg-icon="img/icons/more_vert.svg"></md-icon>
+                    <i class="material-icons" style="color:black;">shopping_cart</i>
+                  </md-button>
+                </div>
+              </md-toolbar>
+            </md-content>
+          </div>
+        </div>
+      -->
+  <!-- toolbar ends -->
+  <!--Khadisutra title bar start-->
+  <div style="padding:1%">
+    <md-toolbar style="background-color:white" style="position:absolute;">
+
+      <center>
+
+        <a href="./webpages/home.html">
+          <img src="../image/logo.png">
+        </a>
+
+      </center>
+    </md-toolbar>
+  </div>
+  <!--Khadisutra title bar end-->
+
+
+  <!--<DESKTOP starts-->
+  <div class="desktop">
+
+    <!--Desktop Menu start-->
+    <div class="container" style="width:100%;padding:unset;align-content:center;text-transform:uppercase" ng-controller="inner_menuctrl">
+
+        <nav class="navbar  navbar-default" style="box-shadow: 0 6px 6px -6px rgb(236, 245, 247);background:white;border-top:none;border-left:none;border-right:none;vertical-align:bottom">
+
+
+
+            <ul class="nav navbar-nav show-on-hover" ng-repeat="i in category">
+    
+              <li class="dropdown mega-dropdown" style="display:inline-block;">
+                <a id="i.a_cat_id"  class="dropdown-toggle" style="text-align:center;cursor:default; color: #222;font-size: 1.5rem;letter-spacing: 1.2px;font-weight: 500;">{{i.atitle}}</a>
+    
+    
+                <ul class="dropdown-menu mega-dropdown-menu row">
+                  <li class="col-sm-3" style="width:22%">
+                    <ul>
+                      <!-- <li class="dropdown-header">New in Stores</li> -->
+                      <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                          <div class="item active">
+                            <!-- <a href="#">
+                              <img style="height:inherit" src="http://placehold.it/254x150/3498db/f5f5f5/&text=New+Collection" class="img-responsive"
+                                alt="product 1">
+                            </a> -->
+                            <!-- <h4>
+                              <small>Summer dress floral prints</small>
+                            </h4>
+                            <button class="btn btn-primary" type="button">49,99 €</button>
+                            <button href="#" class="btn btn-default" type="button"> -->
+                              <!-- <span class="glyphicon glyphicon-heart"></span> Add to Wishlist</button> -->
+                          </div>
+                          <!-- End Item -->
+                          <!-- <div class="item">
+                            <a href="#">
+                              <img src="http://placehold.it/254x150/ef5e55/f5f5f5/&text=New+Collection" class="img-responsive"
+                                alt="product 2">
+                            </a>
+                            <h4>
+                              <small>Gold sandals with shiny touch</small>
+                            </h4>
+                            <button class="btn btn-primary" type="button">9,99 €</button>
+                            <button href="#" class="btn btn-default" type="button">
+                              <span class="glyphicon glyphicon-heart"></span> Add to Wishlist</button>
+                          </div> -->
+                          <!-- End Item -->
+                          <!-- <div class="item">
+                            <a href="#">
+                              <img src="http://placehold.it/254x150/2ecc71/f5f5f5/&text=New+Collection" class="img-responsive"
+                                alt="product 3">
+                            </a>
+                            <h4>
+                              <small>Denin jacket stamped</small>
+                            </h4>
+                            <button class="btn btn-primary" type="button">49,99 €</button>
+                            <button href="#" class="btn btn-default" type="button">
+                              <span class="glyphicon glyphicon-heart"></span> Add to Wishlist</button>
+                          </div> -->
+                          <!-- End Item -->
+                        </div>
+                        <!-- End Carousel Inner -->
+                      </div>
+                      <!-- /.carousel -->
+                      <!-- <li class="divider"></li> -->
+                      <!-- <li>
+                        <a href="#">View all Collection
+                          <span class="glyphicon glyphicon-chevron-right pull-right"></span>
+                        </a>
+                      </li> -->
+                    </ul>
+                  </li>
+                  <li class="col-sm-3" style="width:75%;" ng-if="i.category">
+    
+                    <ul class="col-sm-3" style="width:20%" ng-repeat="j in i.category">
+                      <li class="dropdown-header" style="padding:0px 17px">
+                        <a id="j.a_cat_id" style="color: #222;font-size: 1.5rem;letter-spacing: 1.2px;font-weight: 500;cursor:default;padding:0px 0px" class="dropdown-header">{{j.atitle}}</a>
+                      </li>
+                      <li class="divider" style="margin-left:3%"></li>
+    
+                      <li ng-repeat="k in j.category">
+                        <a id="k.a_cat_id" ng-click="getHome(i.atitle,k.a_cat_id)" style="margin:8%;color: #222;font-size: 1.2rem;letter-spacing: 1.2px;font-weight: 500;cursor: pointer;">{{k.atitle}}</a>
+                      </li>
+    
+                      <!-- <li class="divider"></li> -->
+                      <!-- <li class="dropdown-header">Tops</li>
+                          <li><a href="#">Good Typography</a></li> -->
+                    </ul>
+                  </li>
+    
+                </ul>
+    
+              </li>
+            </ul>
+
+
+        <!-- /.nav-collapse -->
+    </nav>
+
+    </div>
+  </div>
+  <div class="tablet">
+
+    <!--Desktop Menu start-->
+    <div class="container" style="width:100%;padding:unset;align-content:center;text-transform:uppercase" ng-controller="inner_menuctrl">
+
+      <nav class="navbar navbar-default" style="background:white;border-top:none;">
+
+
+
+        <ul class="nav navbar-nav show-on-hover" ng-repeat="i in category">
+
+          <li class="dropdown mega-dropdown">
+            <a id="i.a_cat_id" class="dropdown-toggle" style="text-align:center;">{{i.atitle}}</a>
+
+
+            <ul class="dropdown-menu mega-dropdown-menu row">
+
+              <li class="col-sm-3" style="width:100%;" ng-if="i.category">
+
+                <ul class="col-sm-3" ng-repeat="j in i.category">
+                  <li class="dropdown-header">
+                    <a id="j.a_cat_id" ng-click="getHome(i.atitle,j.a_cat_id)" class="dropdown-header">{{j.atitle}}</a>
+                  </li>
+                  <li class="divider"></li>
+
+                  <li ng-repeat="k in j.category">
+                    <a id="k.a_cat_id" ng-click="getHome(i.atitle,k.a_cat_id)" style="margin:8%">{{k.atitle}}</a>
+                  </li>
+
+                </ul>
+              </li>
+
+            </ul>
+
+          </li>
+        </ul>
+
+
+      </nav>
+
+    </div>
+  </div>
+  <br>
+  <div id="id1" ng-controller="DemoBasicCtrl as ctrl" ng-cloak="" class="menuBardemoBasicUsage">
+
+
+  </div>
+  <!--Khadisutra title bar end-->
+
+  <!--<TABLET ends-->
+
+
+  <div ng-controller="show" class="productImageDisplay" ng-cloak>
+    <div layout="row" ng-cloak>
+      <div layout-align: "center center" style="align-content:center;width:15%;height:50%;padding-left:1%;padding-right:1%;overflow:hidden;"
+        ng-if="l">
+
+        <div layout="column" ng-repeat="i in photos">
+
+          <!-- <p>{{i}}</p> -->
+          <img id="{{i}}" alt="image" class="highlight" ng-src="{{imagepath}}/{{i}}" ng-click="display(i)" ng-mouseover="display(i)"
+            style="display:inline-block;position:inherit;height:100px;width:60px;outline:none;margin-left:50%;margin-bottom:5%" />
+
+        </div>
+      </div>
+
+      <!-- <img id="{{i.display_photo}}" ng-click="opencard($event,id)" ng-src="../image/{{i.display_photo}}" style="display:inline-block;padding:5%;position:inherit" />   -->
+      <!-- <div style="width:30%" ng-if="l">
+        <img id="{{i.p_display_photo}}" ng-src="{{imagepath}}/{{displayimg}}" style="height:100%;width:100%;display:inline-block;padding:5%;position:inherit; border: 1px solid #ddd;border-radius: 4px;padding: 5px;" />  
+
+      </div> -->
+
+      <table class="img-zoom-container" ng-cloak>
+        <tr>
+          <td>
+            <div>
+
+              <img id="myimage" ng-src="{{imagepath}}/{{displayimg}}" ng-mouseover="display(displayimg)" style="height:550px;width:350px;display:inline-block;position:inherit; border-right: 3px solid white"
+              />
+              <!-- <script>
+          $( "#myimage" ).mouseover(function() {
+     
+     
+          })
+          </script> -->
+              <!-- <img id="myimage" src="{{imagepath}}/{{displayimg}}" style="height:100%;width:100%;display:inline-block;padding:5%;position:inherit; border: 1px solid #ddd;border-radius: 4px;padding: 5px;"/> -->
+            </div>
+          </td>
+          <td>
+            <div id="myresult"></div>
+          </td>
+        </tr>
+      </table>
+
+      <div style="width:25%" ng-if="l">
+        <table style="display:inline-block;position:absolute;padding-left:5%;color: #222;text-transform:uppercase;font-size: 1.5rem;letter-spacing: 1.2px;font-weight: 500;">
+          <tr>
+            <td>
+              <h1>
+                {{i.p_name}}
+              </h1>
+            </td>
+          </tr>
+          <tr>
+            <td style="color: #666">
+
+              {{i.p_description}}
+
+            </td>
+          </tr>
+          <tr>
+            <td style="padding-top:15px;padding-bottom: 10px">
+              <h3 style="font-weight: bold;display:inline">
+                &#x20B9; {{i.p_price}}
+              </h3>
+              <h3 style="display:inline;text-decoration:line-through;padding-left:5px">&#x20B9; {{i.p_final_price}}</h3>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <!-- <h4>
+                Fabric : {{i.p_fabric}}
+              </h4>
+              <h4 style="display: inline" >Colour : {{i.p_color}}</h4> -->
+              <table style="color: black">
+                <tr>
+                  <td>
+                    <h4>Fabric : {{i.p_fabric}}</h4>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td style="padding-right: 5px">
+                    <h4>Color : {{i.p_color}}</h4>
+                  </td>
+                  <td style="margin:none">
+                    <md-checkbox class="color" ng-style="{'background-color':'{{i.p_color}}'}" disabled></md-checkbox>
+                  </td>
+                </tr>
+
+              </table>
+
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <ul ng-repeat="j in i.p_description_points">
+                <h4>
+                  <li style="text-transform: uppercase">
+                    {{j}}</li>
+                </h4>
+              </ul>
+            </td>
+          </tr>
+
+
+
+          <tr>
+            <td>
+                <!-- <h3 style="font-family:Merriwether"> -->
+
+            <md-button style="background:#081e33;color:white;width:400px;font-family:Merriwether;display:inline-block">
+                  ADD TO CART
+                </md-button>
+
+          </td>
+
+
+          </tr>
+        </table>
+      </div>
+    </div>
+    <!-- <div>
+    <form ng-submit="getsizedata()">
+<div ng-repeat="j in data" style="display:inline-block;padding:2%">
+  <label style="display:inline-block">{{j.size_name}} (in inches) : </label>
+    <md-select ng-model="data[size_name]" placeholder="---select---" style="display:inline-block">
+      <md-option ng-repeat="i in j.size_values" value="{{i}}">{{i}}</md-option>
+    </md-select>
+  </div> -->
+    <div ng-cloak style="margin-top:500px">
+      <table border="1" class="sizechart" data-ng-if="data_received" onshow="alterClass()">
+        <tr>
+          <td>label</td>
+          <td>Name</td>
+
+          <td ng-repeat="i in predef_measurement">{{i}}</td>
+          <td>Select</td>
+
+        </tr>
+        <tr ng-repeat="k in predef_sizes">
+          <td>{{k.pre_size_label}}</td>
+          <td>{{k.pre_size_name}}</td>
+
+          <td ng-repeat="j in array[$index]">{{j}}</td>
+          <td>
+              <input type="radio" name="response" data-ng-model="choice.isUserAnswer" data-ng-value="true" />
+          </td>
+        </tr>
+ 
+
+      </table>
+      <script>
+        jQuery(document).ready(function($) {
+        
+var alterClass = function() {
+          
+        console.log("alter class");  
+            var $this = $('.sizechart');
+            var newrows = [];
+            $this.find("tr").each(function(){
+                var i = 0;
+                $(this).find("td").each(function(){
+                    i++;
+                    if(newrows[i] === undefined) { newrows[i] = $("<tr></tr>"); }
+                    newrows[i].append($(this));
+                });
+            });
+            $this.find("tr").remove();
+            $.each(newrows, function(){
+                $this.append(this);
+            });
+        
+};
+
+
+var wid = document.body.clientWidth;
+          if(wid > 735)
+          {
+        console.log("inverted 1st time");
+
+          alterClass();
+          }
+          var size = 1;
+          // if(wid < 735)
+          // {
+          //   size = 1;
+          // }
+          // else
+          // {
+          //   size = 0;
+          // }
+
+          if(wid < 735 && size == 1)
+          {
+            console.log("loaded in small");
+            alterClass();
+            size = 0;
+          }
+
+
+
+
+$(window).resize(function(){
+  wid = document.body.clientWidth;
+        if(wid > 735 && size == 0)
+        {
+          console.log("small to big");
+            alterClass();
+            size = 1;
+        }
+        if(wid < 735 && size == 1)
+        {
+            console.log("big to small");
+            alterClass();
+            size = 0;
+        }
+
+      });
+      //Fire it when the page first loads:
+     //alterClass();
+      
+    });
+</script>
+    </div>
+
+
+    <div>
+      <form name="myForm" enctype="multipart/form-data" ng-submit="ShowAnswers()">
+        <div ng-repeat="i in size" style="display:inline-block;padding:2%">
+          <label style="display:inline-block">{{i.size_name}}</label>
+          <md-select ng-model="Answers[i.size_id]" required>
+            <md-option ng-repeat="option in i.size_values" value="{{option}}">{{option}}</md-option>
+          </md-select>
+
+        </div>
+        <!-- <a ng-click="ShowAnswers()">Submit</a> -->
+        <md-button type="submit" ng-disabled="myForm.$invalid">SUBMIT</md-button>
+      </form>
+    </div>
+    </div>
+    <!-- </form> -->
+    <!-- </div> -->
+
+
+
+
+    <!-- <md-select ng-model="sorting" id="sorting" placeholder="Sort by" ng-change="onChange()">
+                      <md-option value="none">None</md-option>
+                      <md-option value="hightolow">High to Low</md-option>
+                      <md-option value="lowtohigh">Low to High</md-option>
+                      <md-option value="bestseller">Best Seller</md-option>
+                      <md-option value="NewestFirst">Newest First</md-option>
+                      </md-select> -->
+
+
+
+
+
+
+
+
+
+</body>

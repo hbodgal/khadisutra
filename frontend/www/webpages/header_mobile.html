@@ -1,0 +1,168 @@
+
+
+<!--Khadisutra title bar end-->
+
+<!-- mobilemenu start here -->
+
+<div>
+   
+    <div ng-controller="menuctrl" style="padding-bottom:15%;">
+            
+        <div id="mySidenav" class="sidenav slide" data-ng-if="show" style="overflow:hidden;background: white; " md-swipe-left="toggleN()">
+            <!-- <ul id="content" data-ng-if="flag"> -->
+            <ul id="content" data-ng-if="show">
+
+                <!-- <h4 href="javascript:void(0)" class="closebtn" onclick="closeN()">&times;</h4> -->
+                <!-- <h4 href="javascript:void(0)" class="closebtn" style="font-size:15px" ng-click="closeN()">GO BACK</h4> -->
+
+
+                <li class="sidenavlink title" style="text-align: center;line-height: 40px;font-weight: bold;">MENU</li>
+                <li style="background:whitesmoke">
+                        <p style="display:inline;font-size:14px">Currency :</p>
+                        <select ng-model="currency" id="currency" style="display:inline;" ng-change="onChange()" class="currencybox">
+                            <option value="inr" selected>INDIA (INR)</option>
+                            <!-- <option value="usd"> USA (USD)</option> -->
+                            <!-- <option value="lowtohigh">Price Low to High</option> -->
+                        </select>
+                    </li>
+                <li ng-repeat="i in data" ng-click="openNav(i.atitle,i.a_cat_id)" class="sidenavlink">
+                    <a style="color:#333;outline:none;text-decoration:none;">{{i.atitle}}
+                        <img ng-show="!isObjectEmpty(i.category)" style="height:10px;width:10px;float:right;text-decoration: none;margin: 5px" src="../image/right_arrow.svg" />
+
+                    </a>
+                </li>
+                <li ng-hide="isloggedIn" ng-click="opensignin()">Sign In</li>
+                <li ng-hide="isloggedIn" ng-click="opensignup()">Sign Up</li>
+
+                <li ng-if="isloggedIn">Account</li>
+                <li ng-if="isloggedIn">My Orders</li>
+                <li ng-click="openWishlist()">Wishlist</li>
+
+                <li ng-if="isloggedIn">Sign Out</li>
+                <li class="sidenavlink" style="color: black">The Khadisutra</li>
+
+                <!-- <a href="#" ng-repeat="i in data" id="{{i.a_cat_id}}" class="sidenavlink">{{i.atitle}}
+                        <i class="right"></i> -->
+            </ul>
+
+
+
+            <div ng-repeat="i in data" id="{{i.a_cat_id}}" class="childsidenav childslide"  md-swipe-right="closesingleNav(i.a_cat_id)">
+                <!-- <ul id="content" data-ng-if="childflag"> -->
+                <ul id="content" data-ng-if="childflag">
+
+
+
+                    <!-- <h4 href="javascript:void(0)" class="closebtn" style="font-size:15px" ng-click="closeNav(i.a_cat_id)">GO BACK</h4> -->
+                    <li class="sidenavlink" STYLE="text-align: center;margin:unset;line-height:28px;font-weight: bold" ng-click="closesingleNav(i.a_cat_id)">
+                        <img href="javascript:void(0)" class="backbtn"  style="height:10px;width:10px;margin:15px 0 15px 15px"
+                            src="../image/left_arrow.svg" /> MENU / {{i.atitle}}</li>
+
+                    <li ng-repeat="j in i.category" class="sidenavlink" ng-click="openNav(j.atitle,j.a_cat_id)">
+                        <a style="color:#333;OUTLINE:none;text-decoration:none;">{{j.atitle}}
+                            <img ng-show="!isObjectEmpty(j.category)" style="height:10px;width:10px;float:right;text-decoration: none;margin: 5px" src="../image/right_arrow.svg" />
+
+                        </a>
+                    </li>
+                    <!-- <i style="float:right;font-size:25px;padding-left: 5px">&plus;</i> -->
+
+
+                </ul>
+            </div>
+
+            <div ng-repeat="i in data">
+                <div ng-repeat="j in i.category">
+                    <div ng-repeat="k in j.category" id="{{j.a_cat_id}}" class="childsidenav childslide" md-swipe-right="closesingleNav(j.a_cat_id)">
+                        <ul data-ng-if="childflag">
+
+
+
+                            <!-- <h4 href="javascript:void(0)" class="closebtn" style="font-size:15px" ng-click="closeNav(i.a_cat_id)">GO BACK</h4> -->
+                            <li class="sidenavlink" STYLE="text-align: center;margin:unset;line-height:28px;font-weight: bold"  ng-click="closesingleNav(j.a_cat_id)">
+
+                                <img href="javascript:void(0)" class="backbtn" style="height:10px;width:10px;margin:15px 0 15px 15px"
+                                    src="../image/left_arrow.svg" /> {{i.atitle}} / {{j.atitle}}</li>
+
+                            <li  ng-repeat="k in j.category" class="sidenavlink" ng-click="getProduct(i.atitle,k.a_cat_id)">
+                                <a style="color:#333;OUTLINE:none;text-decoration:none;">{{k.atitle}}
+                                    <!-- <img style="height:10px;width:10px;float:right;text-decoration: none;margin: 5px" src="right_arrow.svg" /> -->
+
+                                </a>
+                            </li>
+                            <!-- <i style="float:right;font-size:25px;padding-left: 5px">&plus;</i> -->
+
+
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+        <!-- <div id="main" ng-if="showclose" class="main" style="overflow: hidden;"> -->
+        <div id="main" class="main" style="overflow: hidden;background: #fbfbfb;width:100%;">
+            <!-- <h4 href="javascript:void(0)" data-ng-if="flag" class="closebtn" ng-click="closeN()">&times;</h4> -->
+            <!-- <span style="font-size:30px;cursor:pointer" ng-click="openN()">&#9776;</span> -->
+
+
+            <!-- <div style="background:url(wall.jpg);height:calc(100vh - 44px);position: relative;margin: 0;background-size: cover;background-position: center;overflow: hidden;margin-bottom: 200px">
+            </div>  -->
+
+            <md-content style="overflow:hidden">
+
+                <md-toolbar layout="row">
+                    <div class="md-toolbar-tools" style="background-color: white;margin:unset;padding: unset">
+                        <!-- <md-button class="md-icon-button" aria-label="Settings">
+                        <md-icon md-svg-icon="img/icons/menu.svg"></md-icon>
+                      </md-button> -->
+                      <div ng-if="!isopen" style="width:20px;height:100%;position: fixed;top:0;left:0;margin-left:0" md-swipe-right="toggleN()">
+                            <!-- <p>abc</p>  -->
+                            </div>
+                            <div ng-if="isopen" class="wrapper" md-swipe-left="toggleN()" ng-click="toggleN()">
+                                    <!-- <p>abc</p>  -->
+                                    </div>
+                        <div id="nav-icon1" style="cursor:pointer;outline: none;margin:20px" ng-click="toggleN()">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <img src="{{imgpath}}/icon/khaddargram_logo.png" ng-click="redirect()" style="width:30%;max-width:100px;align-content: center;margin: auto;outline:none;" />
+                        <!-- <span flex=""></span> -->
+                        <!-- <md-button class="md-icon-button" hide-sm aria-label="Favorite">
+                        <md-icon md-svg-icon="img/icons/favorite.svg" style="color: greenyellow;"></md-icon>
+                      </md-button> -->
+                        <!-- <md-button class="md-icon-button" hide-sm aria-label="Favorite">
+                        <md-icon md-svg-icon="img/icons/favorite.svg" style="color: gray;"></md-icon>
+                      </md-button> -->
+                        <!-- <md-menu md-offset="0 -7" hide-gt-sm> -->
+                        <!-- <md-button class="md-icon-button" aria-label="More" ng-click="$mdOpenMenu($event)"> -->
+                        <md-button class="md-icon-button" aria-label="More" style="margin: 10px">
+
+                            <md-icon ng-click="opencart()" style="color:#CCC;fill:#CCC;outline: none" md-svg-icon="../image/shopping-cart.svg"></md-icon>
+                        </md-button>
+                        <!-- <md-menu-content width="6">
+                          <md-menu-item ng-repeat="item in [1, 2, 3]">
+                            <md-button>
+                              <span md-menu-align-target>Option</span>{{item}}
+                            </md-button>
+                          </md-menu-item>
+                        </md-menu-content>
+                      </md-menu> -->
+                    </div>
+                </md-toolbar>
+
+            </md-content>
+        </div>
+
+
+    </div>
+
+    <!--Desktop Menu end-->
+
+    <!--Desktop grid start-->
+</div>
+
+

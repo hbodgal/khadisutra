@@ -1,0 +1,169 @@
+<html style="background: white;max-width: 100%" lang="en">
+
+<head>
+    <title>Kcurrent</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <!-- <script src="http://code.jquery.com/jquery-1.9.1.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet" defer>
+
+    <link rel="icon" href="../image/k_icon.png" type="image/png">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js" defer></script>
+    <script src="../js/angular-route.min.js"></script>
+    <script src="../js/angular-aria.min.js" defer></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.js"></script>    <script src="../js/angular-ui-router.js" defer></script>
+    <script src="../js/angular-ui-router.js" defer></script>
+
+
+    <script src="../js/index.js"></script>
+    <script src="../js/home.js"></script>
+    <script src="../js/show.js"></script>
+    <script src="../js/checkout.js"></script>
+
+
+    <link rel="stylesheet" href="https://material.angularjs.org/1.1.5/docs.css">
+    <link href="../css/index.css" rel="stylesheet">
+    <link href="../css/angular-dropdowns.css" rel="stylesheet">
+    <link href="../css/angular-material.css" rel="stylesheet">
+
+
+    <style>
+        .heading {
+
+            display: table !important;
+            position: relative;
+            margin: 0 auto 2em;
+            text-align: center;
+            font-weight: 400;
+            font-size: 2rem;
+            padding: 20px;
+            color: black;
+            border-bottom: 2px solid black;
+            width: 70%;
+
+        }
+
+        md-grid-tile:hover {
+            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+        }
+
+        table {
+
+            font-size: 10px;
+        }
+
+        td {
+            font-size: 10px;
+
+        }
+    </style>
+    <style>
+        .nav-tabs .nav-link.active {
+            font-weight: bold;
+            background-color: transparent;
+            border-bottom: 3px solid black;
+            border-right: none;
+            border-left: none;
+            border-top: none;
+        }
+        .nav-tabs a{
+        color:#ccc;
+        }
+
+        .image-area {
+            position: relative;
+            width: 85%;
+            background: white;
+        }
+
+        .image-area img {
+            max-width: 100%;
+            height: auto;
+        }
+ 
+
+
+        .remove-card {
+            display: none;
+            /* position: relative; */
+            /* top: -10px; */
+            right: 20px;
+            /* border-radius: 10em; */
+            /* padding: 2px 6px 3px; */
+            text-decoration: none;
+            font: 700 21px/20px sans-serif;
+            /* background: #555; */
+            /* border: 3px solid #fff; */
+            color: #555;
+            /* box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5), inset 0 2px 4px rgba(0, 0, 0, 0.3); */
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+            -webkit-transition: background 0.5s;
+            transition: background 0.5s;
+            
+        }
+        /* .remove-card:hover {
+            
+            display: none;
+            text-decoration: none;
+            color:black;
+
+        }
+
+        .remove-card:active {
+           
+            display: none;
+            text-decoration: none;
+            color:black;
+        } */
+
+        /* .remove-image:hover {
+            display: none;
+            text-decoration: none;
+            color:black;
+           
+        } */
+
+        /* .remove-image:active {
+            display: none;
+            text-decoration: none;
+            color:black;
+           
+        } */
+    </style>
+</head>
+
+<body style="background:white;max-width: 100%;font-family: 'Merriweather', serif;font-size: 10px;margin:auto"
+    ng-app="MyApp">
+    <div id="loader" style="overflow: hidden;">
+        <h1 data-text="Loading..." style="font-size: 25px"></h1>
+    </div>
+
+
+    
+    <div ng-include="'header.html'"></div>
+
+    <div ng-controller="cartctrl">
+
+                    <div class="mobile_footer">
+                             <div ng-include="'wishlist_mobile.html'"></div>
+                    </div>
+                    <div class="desk_footer">
+                            <div ng-include="'wishlist_desk.html'"></div>
+                    </div>
+
+
+
+
+    </div>
+
+    <div ng-include="'footer.html'"></div>
+
+</body>

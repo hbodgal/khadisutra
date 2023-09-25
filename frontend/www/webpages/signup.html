@@ -1,0 +1,149 @@
+<html style="background: white;max-width: 100%" lang="en">
+
+<head>
+
+    <title>Kcurrent</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' />
+
+    <link href="https://fonts.googleapis.com/css?family=Merriweather" rel="stylesheet" defer>
+ 
+    <link rel="icon" href="../image/k_icon.png" type="image/png">
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js" defer></script>
+    <script src="../js/angular-route.min.js"></script>
+    <script src="../js/angular-aria.min.js" defer></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.js"></script>    <script src="../js/angular-ui-router.js" defer></script>
+    <script src="../js/angular-ui-router.js" defer></script>
+ 
+
+    <script src="../js/index.js"></script>
+    <script src="../js/home.js"></script>
+    <script src="../js/show.js" ></script>
+    <script src="../js/checkout.js" ></script>
+
+
+    <link href="../css/angular-material.css" rel="stylesheet" defer>
+    <link rel="stylesheet" href="https://material.angularjs.org/1.1.5/docs.css" defer>
+    <!-- <link href="../css/menu.css" rel="stylesheet"> -->
+    <!-- <link href="../css/home.css" rel="stylesheet"> -->
+    <link href="../css/user_signin.css" rel="stylesheet">
+    <link href="../css/index.css" rel="stylesheet">
+
+
+    <style>
+        md-grid-tile:hover {
+            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+        }
+    </style>
+    <script defer>
+$(function () {
+        var Accordion = function (el, multiple) {
+            this.el = el || {};
+            this.multiple = multiple || false;
+    
+            // Variables privadas
+            var links = this.el.find('.link');
+            // Evento
+            links.on('click', { el: this.el, multiple: this.multiple }, this.dropdown)
+        }
+    
+        Accordion.prototype.dropdown = function (e) {
+            var $el = e.data.el;
+            $this = $(this),
+                $next = $this.next();
+    
+            $next.slideToggle();
+            $this.parent().toggleClass('open');
+    
+            if (!e.data.multiple) {
+                $el.find('.submenu').not($next).slideUp().parent().removeClass('open');
+            };
+        }
+    
+        var accordion = new Accordion($('#accordion'), false);
+    });
+    </script>
+</head>
+
+<body ng-app="MyApp">
+        <noscript>
+                <META HTTP-EQUIV="Refresh" CONTENT="0;URL=ErrorPage.html">
+              </noscript>
+              <div id="loader" style="overflow: hidden;">
+                <h1 data-text="Loading..." style="font-size: 25px"></h1>
+            </div>
+                <div ng-include="'header.html'"></div>
+               
+
+                <!-- <div id="loader" style="overflow: hidden;">
+                        <h1 data-text="Loading..." style="font-size: 25px"></h1>
+                </div> -->
+                
+                <div ng-controller="loggedin" style="background:white;margin: auto;align-content: center">
+                <!-- <form action="/action_page.php"> -->
+                
+                  <div class="localcontainer" style="max-width:550px;align-content: center;margin: auto ">
+                        <p style="text-align: center;font-size: 16px;font: weight 400;margin:unset">Sign Up</p>
+                        <!-- <p>Please fill in this form to create an account.</p> -->
+                        <hr>
+                    <!-- <h1>Register</h1>
+                    <p>Please fill in this form to create an account.</p>
+                    <hr> -->
+                
+                    <label for="fname">First Name</label>
+                    <input type="text" placeholder="Enter First Name" id="fname" required>
+                    <p ng-if="fname_violation" style="margin: unset;font-size: 1.2rem;cursor: pointer;outline: none;color: red">Please enter first name.</p>
+                
+                    <label for="lname">Last Name</label>
+                    <input type="text" placeholder="Enter Last Name" id="lname" required></td>
+                    <p ng-if="lname_violation" style="margin: unset;font-size: 1.2rem;cursor: pointer;outline: none;color: red">Please enter last name.</p>
+                
+                    <label for="phn_no">Phone Number</label>
+                    <input type="text" placeholder="Enter Phone Number" id="phn_no" required>
+                    <p ng-if="phn_no_violation" style="margin: unset;font-size: 1.2rem;cursor: pointer;outline: none;color: red">Please enter phone no.</p>
+                    <p ng-if="phn_format_error" style="margin: unset;font-size: 1.2rem;cursor: pointer;outline: none;color: red">Please enter a valid phone no.</p>
+                
+                    <label for="email">Email ID</label>
+                    <input type="text" placeholder="Enter Email ID" id="email" required>
+                    <p ng-if="email_violation" style="margin: unset;font-size: 1.2rem;cursor: pointer;outline: none;color: red">Please enter Email id.</p>
+                    <p ng-if="email_format_error" style="margin: unset;font-size: 1.2rem;cursor: pointer;outline: none;color: red">Please enter valid Email id.</p>
+                
+                    <label for="psw">Password</label>
+                    <input type="password" placeholder="Enter Password" id="pwd" required>
+                    <p ng-if="pwd_violation" style="margin: unset;font-size: 1.2rem;cursor: pointer;outline: none;color: red">Please enter password.</p>
+                    <p ng-if="pwd_format_error" style="margin: unset;font-size: 1.2rem;cursor: pointer;outline: none;color: red">Please enter password in proper format.</p>
+                
+                    <label for="psw-repeat">Confirm Password</label>
+                    <input type="password" placeholder="Enter Password Again" id="pwd_repeat" required>
+                    <p ng-if="conf_pwd_violation" style="margin: unset;font-size: 1.2rem;cursor: pointer;outline: none;color: red">Please confirm password.</p>
+                    <p ng-if="conf_pwd_format_error" style="margin: unset;font-size: 1.2rem;cursor: pointer;outline: none;color: red">Password is not in proper format.</p>
+                
+                    <p ng-if="pwd_match_error" style="margin: unset;font-size: 1.2rem;cursor: pointer;outline: none;color: red">Passwords do not match.</p>
+                
+                    <hr>
+                    <p style="font-size: 12px;margin: 10px 0">By creating an account you agree to our <a href="#" style="outline: none">Terms & Privacy Policy</a>.</p>
+                
+                    <button style="outline: none" type="button" ng-click="signup()" class="registerbtn">Register</button>
+                  </div>
+                  
+                  <div class="signin">
+                    <p>Already have an account? <a href="../webpages/signin.html" style="outline: none">Sign in</a>.</p>
+                  </div>
+                <!-- </form> -->
+                </div>
+
+
+
+                <div  ng-include="'footer.html'"></div>
+
+
+
+</body>
+</html>
+

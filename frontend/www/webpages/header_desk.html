@@ -1,0 +1,176 @@
+<html>
+
+<head>
+    <style>
+        md-icon:hover {
+
+            color: rgb(124, 124, 124);
+            fill: rgb(124, 124, 124);
+
+        }
+    </style>
+</head>
+
+<body style="background:white;height: 100%;width:100%;padding: 0;margin: 0;font-family: 'Merriweather', serif;top:0"
+    ng-app="MyApp">
+
+
+    <!-- <div style="padding:1%" class="desktop">
+        <md-toolbar style="background-color:white" style="position:absolute;">
+
+            <center>
+
+                <a href="./webpages/home.html">
+                    <img src="../image/logo.png" style="max-height:-webkit-fill-available">
+                </a>
+
+            </center>
+        </md-toolbar>
+    </div> -->
+
+    <!--Khadisutra title bar end-->
+
+    <!-- mobilemenu start here -->
+
+
+    <div ng-controller="menuctrl" style="top:0;">
+
+
+
+        <!--
+                  Copyright 2016 Google Inc. All Rights Reserved. 
+                  Use of this source code is governed by an MIT-style license that can be in foundin the LICENSE file at https://material.angularjs.org/license.
+                  -->
+        <div>
+            <md-content style="overflow:hidden;background:white;height: 110px;top:0" class="desktop">
+
+                <md-toolbar id="toolbar" layout="row" style="position:fixed;top:0;z-index:100">
+                    <div class="md-toolbar-tools" style="background-color: white;margin:unset;padding: unset;top:0;">
+
+
+
+                        <img src="{{imgpath}}/icon/khaddargram_logo.png" ng-click="redirect()" style="outline:none;width:180px;align-content: center;margin: auto;max-height: -webkit-fill-available">
+
+
+
+                    </div>
+                </md-toolbar>
+                <div style="top:0;left:0;position:fixed;z-index: 100;margin-right:20px">
+                    <div style="text-align:center;margin: 20px;float:left;padding-left:20px">
+                        <p style="display:inline;font-size:14px">Currency :</p>
+                        <select ng-model="currency" id="currency" style="display:inline" ng-change="onChange()" class="currencybox">
+                            <option value="inr" selected>INDIA (INR)</option>
+                            <!-- <option value="usd"> USA (USD)</option> -->
+                            <!-- <option value="lowtohigh">Price Low to High</option> -->
+
+                        </select>
+                    </div>
+                </div>
+
+                <div style="top:0;right:0;position:fixed;z-index: 100;margin-right:20px">
+                    <md-button class="md-icon-button" aria-label="More" style="margin: 10px;">
+
+                        <md-icon ng-click="opensignin()" style="color:#CCC;outline: none" md-svg-icon="../image/man-user.svg"></md-icon>
+                    </md-button>
+                    <md-button class="md-icon-button" aria-label="More" style="margin: 10px;">
+
+                        <md-icon ng-click="opencart()" style="color:#CCC;outline: none" md-svg-icon="../image/shopping-cart.svg"></md-icon>
+                    </md-button>
+                    <md-button class="md-icon-button" aria-label="More" style="margin: 10px;">
+
+                        <md-icon ng-click="openWishlist()" style="color:#CCC;outline: none" md-svg-icon="../image/heart-outline.svg"></md-icon>
+                    </md-button>
+
+                </div>
+                <!-- <div style="width:100%;margin:auto;align-content: center;text-align:center;"> -->
+                <div id="mega_navbar" style="position:fixed;font-size:12px;position:fixed;top:60px;margin:auto;text-align: center;padding:17px;outline:none;width:100%;background:white;border:1px solid whitesmoke;z-index:90">
+                    <div class="mega_navbar">
+                        <div class="mega_dropdown" ng-repeat="i in category">
+                            <div class="mega_dropbtn">
+                                <a class="un" ng-click="showmenu(i.atitle,i.a_cat_id)">
+                                    {{i.atitle}}
+                                </a>
+                            </div>
+                            <div class="mega_dropdown-content" style="margin:2px auto;z-index:100">
+                                <div class="mega_row">
+                                    <div class="mega_column" ng-repeat="j in i.category">
+                                        <a class="mega_header" style="outline:none" >{{j.atitle}}</a>
+                                        <a ng-repeat="k in j.category" style="outline:none;line-height:1;"
+                                            ng-click="getProduct(i.atitle,k.a_cat_id)">
+                                            {{k.atitle}}
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    var prevScrollpos = window.pageYOffset;
+                    window.onscroll = function () {
+                        var currentScrollPos = window.pageYOffset;
+                        if (prevScrollpos > currentScrollPos ) {
+                            // console.log("current"+currentScrollPos);
+                            // console.log("previous"+prevScrollpos);
+
+                            document.getElementById("mega_navbar").style.top = "60px";
+                            document.getElementById("mega_navbar").style.border = "2px solid whitesmoke";
+                            document.getElementById("toolbar").style.borderBottom = "2px solid white";
+
+
+                        }
+                        else {
+                            document.getElementById("mega_navbar").style.top = "0px";
+                            document.getElementById("toolbar").style.borderBottom = "2px solid whitesmoke";
+
+                        }
+                        if(currentScrollPos == 0)
+                        {
+                           document.getElementById("mega_navbar").style.top = "60px";
+                            document.getElementById("mega_navbar").style.border = "2px solid whitesmoke";
+                            document.getElementById("toolbar").style.borderBottom = "2px solid white"; 
+                        }
+                        
+                        prevScrollpos = currentScrollPos;
+                    }
+                </script>
+
+
+
+            </md-content>
+        </div>
+
+        <!--Desktop Menu end-->
+
+        <!--Desktop grid start-->
+
+        <script>
+        // $(document).ready(function () {
+        //     $('#nav-icon1').click(function () {
+        //         $(this).toggleClass('open');
+        //     });
+        // });
+        </script>
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>

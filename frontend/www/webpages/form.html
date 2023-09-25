@@ -1,0 +1,22 @@
+<div class="row">
+        <div  style="text-align: left;margin: auto;max-width: 90%;">
+        
+          <div id="form-container" style="background:white;">
+          
+              
+              
+              <!-- use ng-submit to catch the form submission and use our Angular function -->
+              <form id="signup-form" ng-submit="processForm()">
+                  <!-- our nested state views will be injected here -->
+                  <div id="form-views" ui-view></div>
+              </form>
+          
+          </div>
+          
+          <!-- show our formData as it is being typed -->
+          <!-- <pre>
+            {{ formData }}
+          </pre> -->
+        
+        </div>
+        </div>    

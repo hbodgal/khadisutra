@@ -1,0 +1,318 @@
+<style>
+        .nav-tabs .nav-link.active {
+            font-weight: bold;
+            background-color: transparent;
+            border-bottom: 3px solid black;
+            border-right: none;
+            border-left: none;
+            border-top: none;
+        }
+        .nav-tabs a{
+        color:#ccc;
+        }
+
+        .image-area {
+            position: relative;
+            width: 85%;
+            background: white;
+        }
+
+        .image-area img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .remove-image {
+            display: none;
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            border-radius: 10em;
+            padding: 1px 6px 4px 6px;/*3px 6px 1px 6px;*/
+            text-decoration: none;
+            font: 700 21px/20px sans-serif;
+            background: #555;
+            /* border: 3px solid #fff; */
+            color: #FFF;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5), inset 0 2px 4px rgba(0, 0, 0, 0.3);
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+            -webkit-transition: background 0.5s;
+            transition: background 0.5s;
+        }
+        .remove-card {
+            display: none;
+            /* position: relative; */
+            /* top: -10px; */
+            right: 20px;
+            /* border-radius: 10em; */
+            /* padding: 2px 6px 3px; */
+            text-decoration: none;
+            font: 700 21px/20px sans-serif;
+            /* background: #555; */
+            /* border: 3px solid #fff; */
+            color: #555;
+            /* box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5), inset 0 2px 4px rgba(0, 0, 0, 0.3); */
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+            -webkit-transition: background 0.5s;
+            transition: background 0.5s;
+            
+        }
+        .remove-card:hover {
+            
+            display: none;
+            text-decoration: none;
+            color:black;
+
+        }
+
+        .remove-card:active {
+           
+            display: none;
+            text-decoration: none;
+            color:black;
+        }
+
+        .remove-image:hover {
+            display: none;
+            text-decoration: none;
+            color:black;
+           
+        }
+
+        .remove-image:active {
+            display: none;
+            text-decoration: none;
+            color:black;
+           
+        }
+    </style>
+    <div ng-cloak="" class="tabsdemoDynamicHeight "  style="margin:Auto;text-align:center">
+        <section>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center ">
+                        <nav class="nav-justified ">
+                            <div class="nav nav-tabs " id="nav-tab" role="tablist">
+                                <a class="nav-item nav-link active" id="cart-tab" data-toggle="tab" href="#pop1" role="tab"
+                                    aria-controls="pop1" aria-selected="true" style="padding:10px;font-size:12px">Cart</a>
+                                <a class="nav-item nav-link" id="wishlist-tab" data-toggle="tab" href="#pop2" role="tab"
+                                    aria-controls="pop2" aria-selected="false" style="padding:10px;font-size:12px">Wishlist</a>
+
+                            </div>
+                        </nav>
+                        <div class="tab-content" id="nav-tabContent" ><!--md-swipe-right="swiperight()" md-swipe-left="swipeleft()"-->
+                            <div class="tab-pane fade show active" id="pop1" role="tabpanel" aria-labelledby="pop1-tab"
+                                style="background:white" md-swipe-left="swipeleft()">
+                                <!-- <div class="pt-3"></div> -->
+
+                                <table style="width: 100%;padding: 10px;font-size: 12px;background: white;max-width:600px;margin:auto"><!--md-swipe-left="swipeleft()"-->
+                                    <tr>
+                                        <th colspan="3" style="text-align: center;padding:5%;">YOUR CART</th>
+
+                                    </tr>
+                                    <tr style="text-align:center;border: 1px solid #ccc;">
+                                        <!-- <td style="align-self:left;padding: 15px" onclick="">
+                                            <img href="javascript:void(0)" class="backbtn" ng-click="" style="height:10px;width:10px;margin-right:5px" src="../left_arrow.svg" />
+                                            Continue Shopping
+                                            
+
+                                        </td> -->
+                                        <td style="align-self:right;padding: 15px;background: #ccc;border:1px black solid" colspan="2" ng-click="checkout()">CHECKOUT SECURELY
+                                        </td>
+                                    </tr>
+                                    <tr style="font-size:12px">
+                                            <td  style="align-self:left;padding: 15px 0 15px 15px">
+                                                Total :
+                                            </td>
+                                            <td  style="text-align:right;padding:15px 15px 15px 0">
+                                                    Total
+                                                </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="align-self:left;padding: 15px 0 15px 15px">
+                                                     Grand Total (Incl. Tax) :
+                                                </td>
+                                                <td style="text-align:right;padding:15px 15px 15px 0">
+                                                        Grand Total
+                                                   </td>
+                                            </tr>
+                                    <tr class="animate-repeat" ng-repeat="item in cart_data | filter:searchText" id="{{item.p_id}}" style="border-bottom:1px solid #ccc;border-top:1px solid #ccc;vertical-align: top">
+                                        <td style="width:50%;padding-top:6px">
+
+                                            <md-card flex="100" class="image-area">
+                                                <img style="display:inline-block;outline:none;height:auto;width:100%;align-self: center"
+                                                    ng-click="openproduct(item.p_id)" ng-src="{{imgpath}}/{{item.p_display_photo}}" />
+
+                                                <md-button class="btn-primary" ng-click="addItem(item)" style="display:unset;border:1px solid #ccc;font-size: 8px;">Add
+                                                    to Wishlist</md-button>
+
+
+                                            </md-card>
+
+                                        </td>
+                                        <td style="padding:5%">
+                                                <a class="remove-card" href="#" style="display: inline;" ng-click="splice_cart_product($index,item.p_id)">&#215;</a>
+
+                                            <table style="font-size: 8px;">
+                                                <tr>
+                                                    <td style="font-size: 14px;font-weight: bold">
+                                                        {{ item.p_name }}
+
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding-top:10%;font-size: 10px ">
+                                                        {{item.p_final_price | currency:"&#x20B9;" }}
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        {{ item.p_name }}
+
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding-top:10% ">
+                                                        {{item.p_final_price | currency:"&#x20B9;" }}
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        {{ item.p_name }}
+
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding-top:10% ">
+                                                        {{item.p_final_price | currency:"&#x20B9;" }}
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        {{ item.p_name }}
+
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="padding-top:10% ">
+                                                        {{item.p_final_price | currency:"&#x20B9;" }}
+                                                    </td>
+                                                </tr>
+
+
+                                            </table>
+
+                                        </td>
+                                    </tr>
+                                    <tr style="font-size:12px">
+                                        <td  style="align-self:left;padding: 15px 0 15px 15px">
+                                            Total :
+                                        </td>
+                                        <td  style="text-align:right;padding:15px 15px 15px 0">
+                                                Total
+                                            </td>
+                                    </tr>
+                                    <tr>
+                                        <td style="align-self:left;padding: 15px 0 15px 15px">
+                                                 Grand Total (Incl. Tax) :
+                                            </td>
+                                            <td style="text-align:right;padding:15px 15px 15px 0">
+                                                    Grand Total
+                                               </td>
+                                        </tr>
+                                                <tr>
+                                                <!-- <td colspan="2" style="align-self:left;padding: 15px">
+                                                        I want to apply promo code 
+                                                        <input type="checkbox" style="margin-left:10px;vertical-align:middle">
+                                                    </td> -->
+                                                </tr>
+                                        <tr style="text-align:center;border: 1px solid #ccc;padding:15px" colspan="2">
+                                                <!-- <td style="align-self:left;padding: 15px">
+                                                    <img href="javascript:void(0)" class="backbtn" ng-click="closesingleNav(i.a_cat_id)"
+                                                        style="height:10px;width:10px;margin-right:5px" src="../left_arrow.svg" />Continue
+                                                    Shopping
+        
+                                                </td> -->
+                                                <td style="align-self:right;padding: 15px;background: #ccc;border:1px black solid" colspan="2" ng-click="checkout()">CHECKOUT SECURELY
+                                                </td>
+                                            </tr>
+                                   
+
+                                </table>
+
+
+                            </div>
+                            <div class="tab-pane fade" id="pop2" role="tabpanel" aria-labelledby="pop2-tab" style="background:white" md-swipe-right="swiperight()">
+                                <!-- <div class="pt-3"></div> -->
+                                <table style="width: 100%;padding: 5px;font-size: 12px;background: white">
+                                    <tr>
+                                        <th colspan="3" style="text-align: center;padding:15px;">YOUR WISHLIST</th>
+
+                                    </tr>
+                                </table>
+
+                                <md-content flex layout-padding style="background:white;">
+
+                                    <md-grid-list flex md-cols-gt-md="4" md-cols-md="3" md-cols-sm="2" md-gutter="1%"
+                                        md-cols-xs="2" md-row-height="1:1.9">
+                                        <md-grid-tile ng-repeat="i in wishlist_data" layout="column">
+                                            <md-card flex="100" style="padding:6px;">
+                                                <div class="image-area" style="align-self: center">
+                                                    <img id="{{i.p_id}}" style="display:inline-block;outline:none;height:auto;width:100%;align-self: center"
+                                                        ng-click="openproduct(i.p_id)" ng-src="{{imgpath}}/{{i.p_display_photo}}" />
+                                                    <a class="remove-image" href="#" style="display: inline;" ng-click="splice_wishlist_product($index,i.p_id)" >&#215;</a>
+                                                </div>
+
+                                                <md-card-content style="text-align:center;background:white;color:black;padding:0pt;height: fit-content">
+
+                                                    <h4 class="pr_name" ng-click="openproduct(i.p_id)" style="outline:none;min-height: 15px;max-height: 15px;font-size:1.1rem;"
+                                                        layout-align="start start" id="{{i.p_id}}">{{i.p_name}}</h4>
+                                                    <h3 ng-click="openproduct(i.p_id)" style="outline:none;display:inline;text-decoration: line-through;font-size:1.1rem;"
+                                                        ng-if="i.p_discount_available">&#x20b9; {{i.p_price}}</h3>
+                                                    <h4 ng-click="openproduct(i.p_id)" style="outline:none;display: inline;font-size:1.1rem;"
+                                                        id="{{i.p_id}}">&#x20b9; {{i.p_final_price}}</h4><br>
+                                                    <md-button class="btn-primary" ng-click="addItem(item)" style="display:unset;border:1px solid #ccc;font-size: 8px;">Select Size</md-button>
+                                                    <!--    <img ng-click="addItem(item)" style="height:15px;width:15px;float:right;text-decoration: none;margin: 5px" src="../image/trash.svg" /> -->
+                                                </md-card-content>
+
+                                            </md-card>
+                                        </md-grid-tile>
+                                    </md-grid-list>
+                                </md-content>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        function swipeleft()
+        {
+            document.getElementById("cart-tab").classList.remove("active");
+            document.getElementById("pop1").classList.remove("active");
+            document.getElementById("pop1").classList.remove("show");
+            document.getElementById("wishlist-tab").classList.add("active");
+            document.getElementById("pop2").classList.add("active");
+            document.getElementById("pop2").classList.add("show");
+
+
+
+        }
+        function swiperight()
+        {
+            
+            document.getElementById("wishlist-tab").classList.remove("active");
+            document.getElementById("pop2").classList.remove("active");
+            document.getElementById("pop2").classList.remove("show");
+            document.getElementById("cart-tab").classList.add("active");
+            document.getElementById("pop1").classList.add("active");
+            document.getElementById("pop1").classList.add("show");
+
+
+
+        }
+        </script>
+</body>
